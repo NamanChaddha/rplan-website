@@ -49,7 +49,7 @@
         }
         #balloon-svg.grow-animation {
             animation: grow 2.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards,
-                         wobble 4s ease-in-out infinite;
+                        wobble 4s ease-in-out infinite;
         }
         #balloon-svg.pop-animation {
             animation: pop 0.4s ease-in forwards;
@@ -119,14 +119,12 @@
         #projectModal.hidden {
             display: none;
         }
-
     </style>
 </head>
 <body class="bg-[#0d1117] text-gray-300">
 
     <div id="spotlight"></div>
 
-    <!-- Modal for Project Data -->
     <div id="projectModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
         <div class="bg-gray-800 border border-gray-700 rounded-xl max-w-lg w-full p-8 relative shadow-2xl transform transition-all">
             <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
@@ -138,12 +136,10 @@
             </div>
             <div class="space-y-4">
                 <p id="modalContent" class="text-gray-200 leading-relaxed text-lg font-medium">
-                    <!-- Dynamic Content -->
-                </p>
+                    </p>
                 <div class="h-px bg-gray-700 w-full"></div>
                 <p id="modalSubContent" class="text-teal-400/80 italic">
-                    <!-- Dynamic Content -->
-                </p>
+                    </p>
             </div>
             <div class="mt-8">
                 <button id="closeModalBtn" class="w-full bg-teal-600/20 hover:bg-teal-600/40 text-teal-400 border border-teal-500/50 py-2 rounded-lg font-bold transition-all">
@@ -153,30 +149,31 @@
         </div>
     </div>
 
-    
-
     <nav class="bg-[#0d1117]/80 backdrop-blur-sm shadow-lg sticky top-0 z-40 border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
-                    <a href="#">
-                    </a>
+                    <a href="#"></a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-2">
+                        
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 OPERATIONS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
                             <div class="dropdown-menu hidden absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
                                 <div class="py-1">
-                                    <a href="operations.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Project Scheduling</a>
-                                    <a href="operations.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Project Controls</a>
-                                    <a href="operations.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Trainings</a>
-                                    <a href="operations.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Resourcing</a>
+                                    Tata Consulting Engineers
+                                    <a href="javascript:void(0)" data-company="eta" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">ETA ASCON</a>
+                                    <a href="javascript:void(0)" data-company="nbtc" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">NBTC Group</a>
+                                    <a href="javascript:void(0)" data-company="kentech" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Kentech Group</a>
+                                    <a href="javascript:void(0)" data-company="qatar" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Qatar Engineering & Construction</a>
+                                    <a href="javascript:void(0)" data-company="alhassan" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Al Hassan Engineering</a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 PROJECTS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
@@ -190,19 +187,25 @@
                                         </a>
                                         <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
                                             <div class="py-1">
-                                                <!-- Project Links -->
-                                                <a href="javascript:void(0)" id="projectALink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Tata Consulting Engineers Limited </a>
-                                                <a href="javascript:void(0)" id="projectBLink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">ETA ASCON</a>
-                                                <a href="javascript:void(0)" id="projectALink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">NBTC Group</a>
-                                                <a href="javascript:void(0)" id="projectALink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Kentech Group</a>
-                                                <a href="javascript:void(0)" id="projectALink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Qatar Engineering & Construction Company W.L.L</a>
-                                                <a href="javascript:void(0)" id="projectALink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Al Hassan Engineering Company Abu Dhabi LLC</a>
+                                                <a href="javascript:void(0)" data-company="tata" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Tata Consulting Engineers Limited </a>
+                                                <a href="javascript:void(0)" data-company="eta" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">ETA ASCON</a>
+                                                <a href="javascript:void(0)" data-company="nbtc" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">NBTC Group</a>
+                                                <a href="javascript:void(0)" data-company="kentech" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Kentech Group</a>
+                                                <a href="javascript:void(0)" data-company="qatar" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Qatar Engineering & Construction Company W.L.L</a>
+                                                <a href="javascript:void(0)" data-company="alhassan" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Al Hassan Engineering Company Abu Dhabi LLC</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  STO/TA</a>
-                                    
-                                    <!-- Construction with nested submenus -->
+                                    <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                                            <span> STO/TA</span>
+                                            <i class="fas fa-chevron-right text-xs"></i>
+                                        </a>
+                                        <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
+                                            <div class="py-1">
+                                                <a href="javascript:void(0)" data-company="STS" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">STS </a>
+                                               
+                                            </div>
+                                        </div>
                                     <div class="relative group/sub">
                                         <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
                                             <span> Construction</span>
@@ -210,15 +213,15 @@
                                         </a>
                                         <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
                                             <div class="py-1">
-                                                <!-- Project Links -->
-                                                <a href="javascript:void(0)" id="projectALink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Fibre Glass Plant</a>
-                                                <a href="javascript:void(0)" id="projectBLink" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Refinery Project</a>
+                                                <a href="javascript:void(0)" data-company="fiber_glass" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Fibre Glass Plant</a>
+                                                <a href="javascript:void(0)" data-company="refinery" class="project-link block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Refinery Project</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 TRAININGS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
@@ -232,6 +235,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 USP (TA PLANNING) <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
@@ -250,7 +254,7 @@
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Vessels / Filters / Drums</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">AirFin Coolers</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Structural</a>
-                                           <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Stacks</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Stacks</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Pits & Drains</a>
                                         </div></div>
                                     </div>
@@ -258,9 +262,9 @@
                                         <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Rotating Equipment</span><i class="fas fa-chevron-right text-xs"></i></a>
                                         <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Compressors</a>
-                                           <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Pumps</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Pumps</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Turbines</a>
-                                           <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Fans & Motors</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Fans & Motors</a>
                                         </div></div>
                                     </div>
                                     <div class="relative group/sub">
@@ -277,7 +281,7 @@
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Gate</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Butterfly</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Globe</a>
-                                           <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Ball</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Ball</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Others</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Actuators</a>
                                         </div></div>
@@ -337,11 +341,11 @@
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Thermodynamics</a>
                                         </div></div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-                         <div class="relative group">
+
+                        <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 PLANNING TOOLS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
@@ -350,8 +354,7 @@
                                     <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  P6</a>
                                     <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  MSP</a>
                                     <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Power Bi</a>
-<a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Advanced Analytics</a>
-
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Advanced Analytics</a>
                                 </div>
                             </div>
                         </div>
@@ -376,11 +379,10 @@
         <section class="bg-[#112D32] text-white relative overflow-hidden">
             <div class="absolute inset-0 bg-grid-gray-700/10"></div>
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10">
-                
                 <h1 id="heading-container" class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl min-h-[144px] md:min-h-[160px] flex items-center justify-center opacity-0">
                     <span id="animated-heading-container"></span>
                 </h1>
-                <img class="h-40 mx-auto my-8 rounded-lg" src="logo2.png" alt="rplan Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x80/112D32/c9d1d9?text=RPLAN';">
+                <img class="h-40 mx-auto my-8 rounded-lg" src="{{ url_for('static', filename='logo2.png') }}" alt="rplan Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x80/112D32/c9d1d9?text=RPLAN';">
                 <div class="mt-10">
                     <a href="#contact" class="inline-block bg-teal-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-teal-600/20">Get In Touch</a>
                 </div>
@@ -398,8 +400,6 @@
                     <span class="mx-8">Mumbai</span> <span class="text-gray-600">&bull;</span>
                     <span class="mx-8">Middle East</span> <span class="text-gray-600">&bull;</span>
                     <span class="mx-8">Online</span> <span class="text-gray-600">&bull;</span>
-		    
-
                 </div>
                  <div class="marquee-text flex whitespace-nowrap text-teal-400 font-semibold tracking-wider">
                     <span class="mx-8">Mumbai</span> <span class="text-gray-600">&bull;</span>
@@ -408,10 +408,7 @@
                     <span class="mx-8">Mumbai</span> <span class="text-gray-600">&bull;</span>
                     <span class="mx-8">Middle East</span> <span class="text-gray-600">&bull;</span>
                     <span class="mx-8">Online</span> <span class="text-gray-600">&bull;</span>
-		    
-
                 </div>
-
             </div>
         </div>
 
@@ -426,13 +423,13 @@
                         <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <img class="h-16 w-16 group-hover:scale-110 transition-transform duration-300" src="https://placehold.co/100x100/161b22/c9d1d9?text=CIM" alt="CIM Logo">
                         <div class="relative">
-                            <h3 class="text-xl font-bold text-white">CIM(Headquarters in Canada)</h3>
+                            <h3 class="text-xl font-bold text-white">CIM(Canada)</h3>
                             <p class="mt-2 text-base text-gray-400">Our esteemed partner from Canada, bringing global expertise.</p>
                         </div>
                     </div>
                     <div class="fade-in-up p-8 bg-gray-800/50 rounded-lg shadow-lg flex items-center space-x-6 border border-gray-700 group hover:border-teal-500/50 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 relative overflow-hidden" style="transition-delay: 150ms;">
                          <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-br from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <img class="h-16 w-16 group-hover:scale-110 transition-transform duration-300" src="Equiv technologies.png" alt="Equiv Technologies Logo">
+                        <img class="h-16 w-16 group-hover:scale-110 transition-transform duration-300" src="{{ url_for('static', filename='Equiv technologies.png') }}" alt="Equiv Technologies Logo">
                         <div class="relative">
                             <h3 class="text-xl font-bold text-white">Equiv Technologies(Australia)</h3>
                             <p class="mt-2 text-base text-gray-400">An innovative technology partner from Australia, driving digital transformation.</p>
@@ -449,12 +446,12 @@
                     <p class="mt-2 text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Quick links</p>
                 </div>
                 <div class="mt-16 max-w-2xl mx-auto grid gap-8 md:grid-cols-2">
-                    <a href="VC.pdf" target="_blank" class="fade-in-up resource-card block p-8 bg-gray-800/50 rounded-lg shadow-lg text-center group border border-gray-700 hover:border-teal-500/50 transition-all duration-300">
+                    <a href="{{ url_for('static', filename='VC.pdf') }}" target="_blank" class="fade-in-up resource-card block p-8 bg-gray-800/50 rounded-lg shadow-lg text-center group border border-gray-700 hover:border-teal-500/50 transition-all duration-300">
                         <i class="fas fa-id-card fa-3x text-teal-400 group-hover:scale-110 transition-transform duration-300"></i>
                         <h3 class="mt-4 text-xl font-bold text-white">View Visiting Card</h3>
                         <p class="mt-2 text-sm text-gray-400">Click to view our digital card.</p>
                     </a>
-                    <a href="e-Brochure.pdf" target="_blank" class="fade-in-up resource-card block p-8 bg-gray-800/50 rounded-lg shadow-lg text-center group border border-gray-700 hover:border-teal-500/50 transition-all duration-300" style="transition-delay: 150ms;">
+                    <a href="{{ url_for('static', filename='e-Brochure.pdf') }}" target="_blank" class="fade-in-up resource-card block p-8 bg-gray-800/50 rounded-lg shadow-lg text-center group border border-gray-700 hover:border-teal-500/50 transition-all duration-300" style="transition-delay: 150ms;">
                         <i class="fas fa-book-open fa-3x text-teal-400 group-hover:scale-110 transition-transform duration-300"></i>
                         <h3 class="mt-4 text-xl font-bold text-white">Download e-Brochure</h3>
                         <p class="mt-2 text-sm text-gray-400">Click to get our detailed brochure.</p>
@@ -517,7 +514,7 @@
     <footer class="bg-[#0d1117] border-t border-gray-700/50">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                                 <div>
+                <div>
                     <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Solutions</h3>
                     <ul class="mt-4 space-y-2">
                         <li><a href="#" class="text-base text-gray-400 hover:text-white transition-colors">Project Scheduling</a></li>
@@ -541,65 +538,61 @@
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-700/50 pt-8 text-center">
-                 <p class="text-base text-gray-400">&copy; 2025 rplan. All Rights Reserved.</p>
+                 <p class="text-base text-gray-400">&copy; 2026 rplan. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- Modal Logic ---
+            // --- Modal API Script Wire-up Logic ---
             const projectModal = document.getElementById('projectModal');
-            const projectALink = document.getElementById('projectALink');
-            const projectBLink = document.getElementById('projectBLink'); // Added link B
             const modalContent = document.getElementById('modalContent');
             const modalSubContent = document.getElementById('modalSubContent');
             const closeModal = document.getElementById('closeModal');
             const closeModalBtn = document.getElementById('closeModalBtn');
 
-            // Data storage for dynamic modal content
-            const projectData = {
-                'a': {
-                    main: "Project - Construction of Fibre Glass manufacturing Plant for Owens Corning India Limited, (US$ 50 Million) Navi Mumbai (India).",
-                    sub: "Handled all mechanical contracts closures for this project at the completion stage."
-                },
-                'b': {
-                    main: "Project - Construction of Essar Oil Refinery – (10MTPA) Jamnagar (India). Expediting OSBL units’ Construction ",
-                    sub: "Two major roles included Construction of Cross country piping for crude pipeline at site (50km) between jetty to COT duly supervised for ABAN constructions as per ABB  Lummus standards and Construction supervision of UG and AG pipelines between PIT to COT and track laid piping between Utilities to various units"
-                }
-                // You can add 'c', 'd', etc. here
-            };
-
-            function showModal(contentKey) {
-                const data = projectData[contentKey];
-                if (data) {
-                    modalContent.textContent = data.main;
-                    modalSubContent.textContent = data.sub;
-                    projectModal.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
-                }
+            function showModal(companyKey) {
+                // Async background extraction data route handshake pipeline
+                fetch(`/api/project/${companyKey}`)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response evaluation error');
+                        return response.json();
+                    })
+                    .then(responseObject => {
+                        if (responseObject.success) {
+                            modalContent.textContent = responseObject.data.main;
+                            modalSubContent.textContent = responseObject.data.sub;
+                            projectModal.classList.remove('hidden');
+                            document.body.style.overflow = 'hidden';
+                        }
+                    })
+                    .catch(err => console.error('Error interfacing Python backend server endpoint:', err));
             }
 
             function hideModal() {
                 projectModal.classList.add('hidden');
-                document.body.style.overflow = 'auto'; // Restore scrolling
+                document.body.style.overflow = 'auto';
             }
 
-            // Listeners for Project Links
-            if(projectALink) projectALink.addEventListener('click', (e) => { e.preventDefault(); showModal('a'); });
-            if(projectBLink) projectBLink.addEventListener('click', (e) => { e.preventDefault(); showModal('b'); });
+            // Bind unified single multi-target interaction handler to both menus smoothly
+            document.querySelectorAll('.project-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const companyKey = this.getAttribute('data-company');
+                    if (companyKey) {
+                        showModal(companyKey);
+                    }
+                });
+            });
 
             [closeModal, closeModalBtn].forEach(btn => {
                 if(btn) btn.addEventListener('click', hideModal);
             });
 
-            // Close on outside click
             projectModal.addEventListener('click', (e) => {
                 if (e.target === projectModal) hideModal();
             });
-
-            // --- Balloon Animation Logic ---
-            
 
             // --- Mouse Spotlight Logic ---
             const spotlight = document.getElementById('spotlight');
