@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Experience | rPlan Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-accent: #fbbf24; /* Amber 400 */
+            --secondary-accent: #f97316; /* Orange 500 */
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            overflow-x: hidden;
+            color: #f9fafb;
+        }
+
+        /* Animated Mesh Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(17, 24, 39, 1) 0%, rgba(3, 7, 18, 1) 100%);
+        }
+
+        .mesh-bg::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        /* Hero Text Gradient */
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .accent-gradient {
+            background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Carousel Container */
+        .carousel-stage {
+            perspective: 2000px;
+            height: 450px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 550px;
+            height: 350px;
+            border-radius: 24px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                width: 85vw;
+                height: 50vw;
+            }
+            .carousel-stage {
+                height: 350px;
+            }
+        }
+
+        .slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+            border-radius: 24px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .slide.active .slide-overlay {
+            opacity: 1;
+        }
+
+        .slide:not(.active) {
+            filter: brightness(0.4) blur(1px);
+        }
+
+        /* Custom Navigation Buttons */
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-accent);
+            transform: scale(1.1);
+        }
+
+        /* Dot Indicators */
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 99px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s;
+        }
+        .dot.active {
+            width: 24px;
+            background: var(--primary-accent);
+        }
+
+        /* Caption Styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="mesh-bg"></div>
+
+    <!-- Main Content Wrapper -->
+    <main class="relative z-10 min-h-screen flex flex-col items-center py-12 px-6">
+        
+        <!-- Header -->
+        <header class="text-center max-w-4xl mb-16 space-y-4">
+            <div class="inline-block px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/5 text-amber-400 text-xs font-bold tracking-widest uppercase mb-4">
+                Global Impact & Expertise
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+                <span class="text-gradient">Previous </span>
+                <span class="accent-gradient">Training pics</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+                rPlan delivers high-impact Primavera P6 training and project management solutions across the globe.
+            </p>
+        </header>
+
+        <!-- Carousel Section -->
+        <div class="w-full max-w-6xl relative group">
+            
+            <!-- Navigation Arrows -->
+            <button id="prevBtn" class="nav-btn absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-50 p-4 rounded-full opacity-0 group-hover:opacity-100 hidden md:flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            
+            <button id="nextBtn" class="nav-btn absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-50 p-4 rounded-full opacity-0 group-hover:opacity-100 hidden md:flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+
+            <!-- 3D Stage -->
+            <div id="carousel-stage" class="carousel-stage">
+                <!-- Slides generated by JS -->
+            </div>
+
+            <!-- Indicators -->
+            <div id="dot-container" class="flex justify-center gap-3 mt-8">
+                <!-- Dots generated by JS -->
+            </div>
+        </div>
+
+        <!-- Caption Area -->
+        <div class="w-full max-w-3xl mt-12 mb-16">
+            <div class="glass-card p-8 min-h-[140px] flex items-center justify-center text-center">
+                <p id="caption-text" class="text-gray-200 text-lg md:text-xl font-medium leading-relaxed transition-all duration-500 opacity-100">
+                    <!-- Text injected by JS -->
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    
+
+    <script>
+        const images = [
+            {
+                src: 'static/pic_training1.jpg',
+                caption: 'Conducted specialized P6 Online training for a distributed team of Planning Engineers across Australia.'
+            },
+            {
+                src: 'Pics-CDCTraining/WhatsApp Image 2025-09-30 at 10.51.06_d8a0fe99.jpg',
+                caption: 'Completed professional EPPM certification training for industry experts utilizing version 24.12.'
+            },
+            {
+                src: 'AlintaTrainingPics/WhatsApp Image 2025-09-29 at 13.41.02_f03bf35b.jpg',
+                caption: 'P6 Professional training for leading corporate clients on advanced Oracle Cloud environments.'
+            },
+            {
+                src: 'AlintaTrainingPics/WhatsApp Image 2025-09-25 at 07.06.37_e757d0a0.jpg',
+                caption: 'Empowering Australia\'s engineering sector through intensive Primavera version 25 training programs.'
+            },
+            {
+                src: 'Pics-CDCTraining/WhatsApp Image 2025-09-30 at 10.51.05_c0a66c29.jpg',
+                caption: 'Seamless EPPM professional development sessions tailored for high-stakes infrastructure projects.'
+            },
+            {
+                src: 'AlintaTrainingPics/WhatsApp Image 2025-09-29 at 08.57.28_3962de11.jpg',
+                caption: 'Bridging technical gaps with world-class P6 instruction and project management consulting.'
+            }
+        ];
+
+        let currentIndex = 0;
+        const stage = document.getElementById('carousel-stage');
+        const caption = document.getElementById('caption-text');
+        const dotsContainer = document.getElementById('dot-container');
+        let autoRotate;
+
+        // Create Slides
+        function initGallery() {
+            images.forEach((img, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'slide';
+                slide.style.backgroundImage = `url('${img.src}')`;
+                slide.innerHTML = `<div class="slide-overlay"></div>`;
+                slide.onclick = () => goToSlide(i);
+                stage.appendChild(slide);
+
+                const dot = document.createElement('div');
+                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            });
+            updateGallery();
+            startAutoRotate();
+        }
+
+        function updateGallery() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const total = images.length;
+
+            slides.forEach((slide, i) => {
+                let offset = i - currentIndex;
+                
+                // Handle circular offset
+                if (offset < -total / 2) offset += total;
+                if (offset > total / 2) offset -= total;
+
+                const absOffset = Math.abs(offset);
+                
+                slide.classList.toggle('active', offset === 0);
+                
+                // 3D positioning logic
+                let translateX = offset * 250;
+                let translateZ = absOffset * -300;
+                let rotateY = offset * -35;
+                let opacity = 1 - (absOffset * 0.4);
+                let zIndex = 100 - absOffset;
+
+                // Mobile adjustments
+                if (window.innerWidth < 768) {
+                    translateX = offset * 120;
+                    translateZ = absOffset * -200;
+                }
+
+                slide.style.transform = `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`;
+                slide.style.opacity = opacity > 0 ? opacity : 0;
+                slide.style.zIndex = zIndex;
+            });
+
+            // Update Dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+
+            // Update Caption with fade effect
+            caption.style.opacity = 0;
+            caption.style.transform = "translateY(10px)";
+            
+            setTimeout(() => {
+                caption.textContent = images[currentIndex].caption;
+                caption.style.opacity = 1;
+                caption.style.transform = "translateY(0)";
+            }, 300);
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateGallery();
+            resetAutoRotate();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateGallery();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateGallery();
+        }
+
+        function startAutoRotate() {
+            autoRotate = setInterval(nextSlide, 7000);
+        }
+
+        function resetAutoRotate() {
+            clearInterval(autoRotate);
+            startAutoRotate();
+        }
+
+        // Event Listeners
+        document.getElementById('nextBtn').onclick = () => { nextSlide(); resetAutoRotate(); };
+        document.getElementById('prevBtn').onclick = () => { prevSlide(); resetAutoRotate(); };
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Responsive handling
+        window.onresize = updateGallery;
+
+        initGallery();
+    </script>
+</body>
+</html>

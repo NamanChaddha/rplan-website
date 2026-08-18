@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Corporate Cards - Mission & Vision</title>
+<!-- Include FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    /* Main Website Background Colors */
+    --bg-base: #070e17;
+    
+    /* Front Card Colors (Sleek Dark Slate) */
+    --front-bg: #141e2e;
+    --front-border: rgba(255, 255, 255, 0.08);
+    --text-main: #ffffff;
+    --text-sub: #94a3b8;
+    --accent-color: #00d4ff;
+    
+    /* Back Card Colors (Official Charter) */
+    --back-bg-1: #0b1924;
+    --back-bg-2: #163042;
+  }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    /* Elegant Premium Background */
+    background-color: var(--bg-base);
+    background-image: 
+      radial-gradient(circle at top right, rgba(0, 212, 255, 0.08), transparent 50%),
+      radial-gradient(circle at bottom left, rgba(6, 124, 138, 0.15), transparent 50%);
+  }
+
+  .values-section {
+    width: 100%;
+    /* Constrained width to perfectly frame 2 cards */
+    max-width: 850px; 
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .card-container {
+    display: grid;
+    /* Exactly 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    align-items: stretch;
+  }
+
+  /* The Card wrapper */
+  .card {
+    background-color: transparent;
+    height: 460px;
+    perspective: 1500px; 
+    cursor: pointer;
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+  }
+
+  .card:hover .card-inner {
+    box-shadow: 0 30px 60px rgba(0, 212, 255, 0.15);
+    transform: translateY(-5px); /* Very subtle lift */
+  }
+
+  .card.flipped .card-inner {
+    transform: rotateY(180deg) translateY(0); /* Reset lift when flipped */
+  }
+
+  /* Position both sides */
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  /* =========================================
+     FRONT SIDE (Sleek Dark Corporate Look)
+     ========================================= */
+  .card-front {
+    background-color: var(--front-bg);
+    border: 1px solid var(--front-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+  }
+
+  /* Floating glowing icon container */
+  .icon-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.05), 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .card:hover .icon-wrapper {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: inset 0 0 30px rgba(0, 212, 255, 0.1), 0 10px 30px rgba(0, 212, 255, 0.2);
+  }
+
+  .card-front i.main-icon {
+    font-size: 45px;
+    color: var(--accent-color);
+  }
+
+  .card-front h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 15px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .card-front p {
+    font-size: 14px;
+    color: var(--text-sub);
+    margin: 0;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  /* Clean minimal button */
+  .auth-btn {
+    margin-top: 40px;
+    background: transparent;
+    border: 1px solid var(--text-sub);
+    color: var(--text-main);
+    padding: 10px 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+
+  .card:hover .auth-btn {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+
+  /* =========================================
+     BACK SIDE (Official Charter Look)
+     ========================================= */
+  .card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, var(--back-bg-1), var(--back-bg-2));
+    padding: 45px 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--front-border);
+  }
+
+  /* Official document inner border */
+  .card-back::before {
+    content: '';
+    position: absolute;
+    top: 15px; left: 15px; right: 15px; bottom: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .back-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overline {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .card-back h3 {
+    font-size: 32px;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin: 25px 0;
+  }
+
+  .card-back p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .return-btn {
+    margin-top: auto;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    pointer-events: none;
+  }
+
+  .return-btn i {
+    font-size: 14px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover .return-btn i {
+    transform: translateX(-5px);
+  }
+
+  /* Responsive Constraints */
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: 1fr; /* Stacks to 1 column on mobile */
+      gap: 40px;
+    }
+    .card {
+      height: 420px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="values-section">
+  <div class="card-container">
+    
+    <!-- MISSION CARD -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <!-- Front -->
+        <div class="card-front">
+          <div class="icon-wrapper">
+            <i class="fas fa-compass main-icon"></i>
+          </div>
+          <h2>Mission</h2>
+          <p>Our core objective</p>
+          <button class="auth-btn">Explore</button>
+        </div>
+        
+        <!-- Back -->
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Mission</h3>
+            <div class="divider"></div>
+            <p>To provide innovative, world-class solutions that empower our clients, drive sustainable growth, and ensure operational excellence in every target we set.</p>
+            <button class="return-btn"><i class="fas fa-arrow-left"></i> Return</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISION CARD -->
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <!-- Front -->
+        <div class="card-front">
+          <div class="icon-wrapper">
+            <i class="fas fa-lightbulb main-icon"></i>
+          </div>
+          <h2>Vision</h2>
+          <p>Our strategic outlook</p>
+          <button class="auth-btn">Explore</button>
+        </div>
+        
+        <!-- Back -->
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Vision</h3>
+            <div class="divider"></div>
+            <p>To be the global leader in our industry, pioneering technological advancements and shaping a sustainable, forward-thinking future for our global community.</p>
+            <button class="return-btn"><i class="fas fa-arrow-left"></i> Return</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

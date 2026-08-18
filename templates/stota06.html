@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Extract</title>
+    <style>
+        /* Modern, elegant geometric font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap');
+
+        body {
+            /* Twilight purple to blue gradient background */
+            background: linear-gradient(135deg, #00605c 0%, #126e6c 100%);
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #2d3748;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            
+            /* Glassmorphism Effect */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+            padding: 60px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .header-title {
+            color: #4a5568; 
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-line {
+            height: 4px;
+            background: linear-gradient(90deg, #00857a 0%, transparent 100%);
+            margin-bottom: 25px;
+            border-radius: 2px;
+        }
+
+        .exec-summary {
+            color: #ed64a6;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+        }
+
+        .dark-blue {
+            color: #005e4d;
+        }
+
+        .bold-italic-underline {
+            font-weight: 700;
+            font-style: italic;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: #a0aec0;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        b {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .mb-5 { margin-bottom: 8px; }
+        .mb-2 { margin-bottom: 4px; }
+        .mb-20 { margin-bottom: 30px; }
+        
+        .list-container {
+            margin-top: 15px;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #007157;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .list-item {
+            display: flex;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .list-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .bullet {
+            color: #007157;
+            width: 25px;
+            flex-shrink: 0;
+            font-weight: 600;
+        }
+
+        /* Spellcheck lines removed by forcing text-decoration to none */
+        .spellcheck-red, .spellcheck-blue {
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section">
+        <div class="header-title">@ Trilok Fabricators Pvt Ltd. - Mumbai</div>
+        <div class="header-line"></div>
+        <div class="exec-summary">EXECUTIVE SUMMARY</div>
+
+        <p class="dark-blue bold-italic-underline mb-20">|PERIOD - Aug 2018 – Sep 2018 (2 Months)</p>
+        
+        <p style="text-align: justify; margin-bottom: 0;">Project Manager from subcontractor (TFEPL) Shutdown at CPCL for replacement of CO Boiler and Charge heater (Main Contractor L&T). Led the site fabrication team for fabrication of new COB and Charge Heaters!</p>
+    </div>
+</div>
+
+</body>
+</html>
