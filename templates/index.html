@@ -193,13 +193,6 @@
     <div class="dropdown-menu hidden absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
         <div class="py-1">
             <!-- Removed stray </a> tags here -->
-            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Scheduling-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Scheduling</a>
-            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project controls</a>
-            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Trainings</a>
-            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='resourcing.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Licensing</a>
-            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Resourcing</a>
-            
-            <!-- ADDED WRAPPER: relative group/sub -->
             <div class="relative group/sub">
                 <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
                     <span>Scheduling</span>
@@ -209,11 +202,19 @@
                 <!-- Removed stray backslash (\) from class below -->
                 <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
                     <div class="py-1">
-                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='quality_check.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Schedule quality check</a>
-                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rules.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Schedule rules</a>
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='quality_check.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Schedule Quality Check</a>
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rules.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Schedule Rules</a>
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Scheduling-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Scheduling</a>
                     </div>
                 </div>
             </div>
+            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project controls</a>
+            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Trainings</a>
+            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='resourcing.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Licensing</a>
+            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Resourcing</a>
+            
+            <!-- ADDED WRAPPER: relative group/sub -->
+            
             <!-- END WRAPPER -->
         </div>
     </div>
