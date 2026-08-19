@@ -71,19 +71,19 @@ def training_pics():
     return render_template("exp temp.html")
 @app.route('/EPCM_01')
 def EPCM_01():  # <--- url_for('check_prof') looks for THIS name
-    return render_template('EPCM01.html')
+    return render_template('epcm01.html')
 @app.route('/EPCM_02')
 def EPCM_02():  # <--- url_for('check_prof') looks for THIS name
-    return render_template('EPCM02.html')
+    return render_template('epcm02.html')
 @app.route('/EPCM_03')
 def EPCM_03():  # <--- url_for('check_prof') looks for THIS name
-    return render_template('EPCM03.html')
+    return render_template('epcm03.html')
 @app.route('/EPCM_04')
 def EPCM_04():  # <--- url_for('check_prof') looks for THIS name
-    return render_template('EPCM04.html')
+    return render_template('epcm04.html')
 @app.route('/EPCM_05')
 def EPCM_05():  # <--- url_for('check_prof') looks for THIS name
-    return render_template('EPCM05.html')
+    return render_template('epcm05.html')
 @app.route('/stota_01')
 def stota_01():  # <--- url_for('check_prof') looks for THIS name
     return render_template('stota01.html')
