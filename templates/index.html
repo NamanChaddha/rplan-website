@@ -208,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project controls</a>
+          <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='project_controls.pdf') }}')" class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project controls</a>
             <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Trainings</a>
             <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='resourcing.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Licensing</a>
             <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Resourcing</a>
