@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About rPlan</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #061412;
+            color: #ffffff;
+        }
+
+        /* =================================
+           MAIN SECTION
+        ================================= */
+
+        .about {
+            min-height: 100vh;
+            padding: 80px 6%;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(0, 190, 165, 0.13),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(0, 120, 105, 0.10),
+                    transparent 30%
+                ),
+                #061412;
+        }
+
+        /* =================================
+           OUTER DECORATIVE BORDER
+        ================================= */
+
+        .main-border {
+            max-width: 1250px;
+            margin: auto;
+
+            position: relative;
+
+            padding: 65px;
+
+            border: 1px solid rgba(68, 211, 188, 0.25);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.035),
+                    rgba(255,255,255,0.012)
+                );
+
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, 0.35);
+
+            border-radius: 4px;
+        }
+
+        /* Corner accents */
+
+        .main-border::before,
+        .main-border::after {
+            content: "";
+
+            position: absolute;
+
+            width: 75px;
+            height: 75px;
+
+            border-color: #35cdb5;
+            border-style: solid;
+
+            pointer-events: none;
+        }
+
+        .main-border::before {
+            top: -1px;
+            left: -1px;
+
+            border-width: 3px 0 0 3px;
+        }
+
+        .main-border::after {
+            bottom: -1px;
+            right: -1px;
+
+            border-width: 0 3px 3px 0;
+        }
+
+        /* =================================
+           HEADER
+        ================================= */
+
+        .header {
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #4de0c6;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            text-transform: uppercase;
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .eyebrow::before,
+        .eyebrow::after {
+            content: "";
+
+            width: 35px;
+            height: 1px;
+
+            background: #27bda5;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+
+            line-height: 1;
+
+            font-weight: 600;
+
+            letter-spacing: -2px;
+
+            color: #f2f8f6;
+        }
+
+        h1 span {
+            color: #35cdb5;
+        }
+
+        .intro {
+            max-width: 800px;
+
+            margin: 28px auto 0;
+
+            color: #a0b8b3;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+        .intro strong {
+            color: #d9e9e5;
+        }
+
+        /* =================================
+           CONTENT
+        ================================= */
+
+        .content {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .section {
+            position: relative;
+
+            padding: 32px;
+
+            border: 1px solid rgba(70, 210, 190, 0.12);
+
+            background: rgba(5, 25, 21, 0.65);
+
+            transition: 0.35s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(70, 210, 190, 0.32);
+
+            background: rgba(8, 35, 30, 0.75);
+
+            transform: translateY(-3px);
+        }
+
+        .section.full {
+            grid-column: span 2;
+        }
+
+        /* =================================
+           SECTION TITLE
+        ================================= */
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            margin-bottom: 22px;
+        }
+
+        .section-number {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(65, 215, 190, 0.3);
+
+            color: #4de0c6;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            border-radius: 50%;
+        }
+
+        .section h2 {
+            font-size: 20px;
+
+            font-weight: 600;
+
+            color: #ffffff;
+        }
+
+        .section h2 span {
+            color: #39cdb5;
+        }
+
+        /* =================================
+           TEXT
+        ================================= */
+
+        .section p {
+            color: #9db5b0;
+
+            font-size: 15px;
+
+            line-height: 1.85;
+        }
+
+        .section strong {
+            color: #d3e5e1;
+            font-weight: 600;
+        }
+
+        /* =================================
+           SERVICE LIST
+        ================================= */
+
+        .service-list {
+            list-style: none;
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+        .service-list li {
+            position: relative;
+
+            padding-left: 22px;
+
+            color: #a5bbb7;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        .service-list li::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 10px;
+
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #35cdb5;
+
+            box-shadow:
+                0 0 10px rgba(53, 205, 181, 0.5);
+        }
+
+        /* =================================
+           HIGHLIGHT
+        ================================= */
+
+        .highlight {
+            margin-top: 25px;
+
+            padding: 20px 22px;
+
+            border-left: 2px solid #32cdb4;
+
+            background: rgba(38, 190, 165, 0.055);
+
+            color: #9eb9b3;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        /* =================================
+           PARTNER SECTION
+        ================================= */
+
+        .partner {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .partner-text {
+            flex: 1;
+        }
+
+        .partner-badge {
+            min-width: 170px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border: 1px solid rgba(70, 215, 190, 0.25);
+
+            background: rgba(40, 190, 165, 0.06);
+
+            color: #4de0c6;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        /* =================================
+           FOOTER
+        ================================= */
+
+        .footer {
+            margin-top: 55px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid rgba(120, 210, 195, 0.10);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .footer span {
+            color: #506b65;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+        }
+
+        .footer-line {
+            width: 90px;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                #087d6f,
+                #48ddc4
+            );
+        }
+
+        /* =================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .main-border {
+                padding: 45px 30px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .section.full {
+                grid-column: span 1;
+            }
+
+            .partner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .partner-badge {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .about {
+                padding: 40px 4%;
+            }
+
+            .main-border {
+                padding: 35px 20px;
+            }
+
+            .intro {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="about">
+
+    <div class="main-border">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <div class="eyebrow">
+                About rPlan
+            </div>
+
+            <h1>
+                Project <span>Controls.</span>
+            </h1>
+
+            <p class="intro">
+                <strong>rPlan is a privately owned Project Management Consultancy
+                operating since June 2017.</strong>
+            </p>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+            <!-- CONSULTING -->
+
+            <div class="section">
+
+                <div class="section-title">
+
+                    <div class="section-number">
+                        01
+                    </div>
+
+                    <h2>
+                        We <span>Consult</span>
+                    </h2>
+
+                </div>
+
+                <p>
+                    We consult on PMO functions related to
+                    <strong>Planning, Scheduling and Project Controls</strong>
+                    on Oil & Gas, Energy projects and shutdowns.
+                </p>
+
+                <div class="highlight">
+                    Focused on creating structured project control
+                    environments that enable better planning,
+                    monitoring and delivery.
+                </div>
+
+            </div>
+
+
+            <!-- CORE SERVICES -->
+
+            <div class="section">
+
+                <div class="section-title">
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <h2>
+                        Core <span>Services</span>
+                    </h2>
+
+                </div>
+
+                <ul class="service-list">
+
+                    <li>
+                        Resourcing and building professional planning teams.
+                    </li>
+
+                    <li>
+                        Planning and controlling projects for
+                        below-budget and before-schedule delivery.
+                    </li>
+
+                    <li>
+                        Process improvement and organisational
+                        asset development.
+                    </li>
+
+                    <li>
+                        Complete Project Control function support.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SPECIALIST SERVICES -->
+
+            <div class="section full">
+
+                <div class="section-title">
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <h2>
+                        Specialist <span>Services</span>
+                    </h2>
+
+                </div>
+
+                <p>
+                    Real-time project progress reporting in
+                    <strong>digital formats</strong> with application-based
+                    live reporting solutions.
+                </p>
+
+                <ul class="service-list" style="margin-top:20px;">
+
+                    <li>
+                        Interactive dashboards and analytical reports.
+                    </li>
+
+                    <li>
+                        Digital narratives and visual project reporting.
+                    </li>
+
+                    <li>
+                        Project progress pictures and real-time updates.
+                    </li>
+
+                    <li>
+                        Two-way communication through mobile,
+                        desktop and tablet applications.
+                    </li>
+
+                    <li>
+                        Back-office and front-end teams sourced
+                        for on-site deployment.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SUB SERVICES -->
+
+            <div class="section full">
+
+                <div class="section-title">
+
+                    <div class="section-number">
+                        04
+                    </div>
+
+                    <h2>
+                        Training & <span>Support</span>
+                    </h2>
+
+                </div>
+
+                <p>
+                    We provide online, offline and on-the-job training
+                    and skills development for planners and engineers.
+                </p>
+
+                <ul class="service-list" style="margin-top:20px;">
+
+                    <li>
+                        Project Controls and Planning.
+                    </li>
+
+                    <li>
+                        Quantity Surveying and Critical Analytics.
+                    </li>
+
+                    <li>
+                        Smart Dashboards and digital applications.
+                    </li>
+
+                    <li>
+                        Resourcing assistance for shutdowns and projects.
+                    </li>
+
+                    <li>
+                        Primavera P6 and MS Project assistance.
+                    </li>
+
+                    <li>
+                        On-the-job development of project planners
+                        using proven planning and monitoring tools.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- PARTNER -->
+
+            <div class="section full">
+
+                <div class="partner">
+
+                    <div class="partner-text">
+
+                        <div class="section-title">
+
+                            <div class="section-number">
+                                05
+                            </div>
+
+                            <h2>
+                                Tools & <span>Licensing Partner</span>
+                            </h2>
+
+                        </div>
+
+                        <p>
+                            We are partners for licensing and support
+                            on <strong>Oracle Primavera related products</strong>,
+                            working alongside our authorised principals
+                            to provide professional software solutions
+                            and support.
+                        </p>
+
+                    </div>
+
+                    <div class="partner-badge">
+                        Oracle Primavera<br>
+                        Partner
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <span>
+                rPlan — Project Management Consultancy
+            </span>
+
+            <div class="footer-line"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
