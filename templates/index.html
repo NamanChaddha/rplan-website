@@ -414,7 +414,8 @@
                                         <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Systems Bifurcation</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Battery Limits</a>
-                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Units & Areas</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='units.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Units & Areas</a>
+
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Nomenclatures</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Colour Codes</a>
                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Thermodynamics</a>
