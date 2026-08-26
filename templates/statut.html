@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Statutory Information | rPlan</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #061412;
+            color: #ffffff;
+        }
+
+        /* ================================
+           SECTION
+        ================================= */
+
+        .statutory {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 8%;
+
+            background:
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(0, 180, 155, 0.12),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 5% 90%,
+                    rgba(0, 120, 105, 0.10),
+                    transparent 30%
+                ),
+                #061412;
+        }
+
+        /* subtle grid */
+
+        .statutory::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(80, 220, 195, 0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(80, 220, 195, 0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            padding-bottom: 45px;
+
+            border-bottom: 1px solid rgba(150, 220, 210, 0.12);
+        }
+
+        .label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #43d5bc;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+        .label::before {
+            content: "";
+
+            width: 35px;
+            height: 2px;
+
+            background: #29bda5;
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 7vw, 6rem);
+
+            line-height: 0.95;
+
+            font-weight: 600;
+
+            letter-spacing: -3px;
+
+            color: #f2f8f6;
+        }
+
+        h1 span {
+            color: #35cdb5;
+        }
+
+        .header-text {
+            max-width: 350px;
+
+            color: #829b96;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            text-align: right;
+        }
+
+        /* ================================
+           INFORMATION
+        ================================= */
+
+        .information {
+            margin-top: 55px;
+        }
+
+        .row {
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            padding: 30px 0;
+
+            border-bottom: 1px solid rgba(150, 220, 210, 0.10);
+
+            transition: 0.3s ease;
+        }
+
+        .row:hover {
+            padding-left: 15px;
+            border-bottom-color: rgba(60, 210, 185, 0.35);
+        }
+
+        /* label */
+
+        .row-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            color: #42cdb6;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+        .icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(70, 215, 190, 0.25);
+
+            color: #4ddfc7;
+
+            font-size: 15px;
+
+            background: rgba(40, 190, 165, 0.06);
+        }
+
+        /* value */
+
+        .row-value {
+            display: flex;
+            align-items: center;
+
+            color: #d2dfdc;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+        .gst {
+            color: #4de0c6;
+
+            letter-spacing: 2px;
+
+            font-weight: 500;
+        }
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .footer {
+            margin-top: 45px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            color: #486560;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+        }
+
+        .footer-accent {
+            width: 100px;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                #087e70,
+                #4de0c6
+            );
+        }
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 750px) {
+
+            .statutory {
+                padding: 60px 7%;
+            }
+
+            .header {
+                display: block;
+            }
+
+            .header-text {
+                margin-top: 25px;
+                text-align: left;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .row:hover {
+                padding-left: 0;
+            }
+
+            .row-value {
+                font-size: 15px;
+            }
+
+            .footer {
+                margin-top: 35px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .row {
+                padding: 25px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="statutory">
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <div>
+                <div class="label">
+                    Corporate Information
+                </div>
+
+                <h1>
+                    Statutory<span>.</span>
+                </h1>
+            </div>
+
+            <p class="header-text">
+                Official corporate information of rPlan
+                for clients, partners and stakeholders.
+            </p>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="information">
+
+            <!-- ADDRESS -->
+
+            <div class="row">
+
+                <div class="row-label">
+
+                    <div class="icon">
+                        ⌖
+                    </div>
+
+                    Address
+
+                </div>
+
+                <div class="row-value">
+                    Your Company Address,<br>
+                    Building / Street Name,<br>
+                    City, State – PIN Code, India
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="row">
+
+                <div class="row-label">
+
+                    <div class="icon">
+                        ☎
+                    </div>
+
+                    Phone
+
+                </div>
+
+                <div class="row-value">
+                    +91 XXXXX XXXXX
+                </div>
+
+            </div>
+
+
+            <!-- GST -->
+
+            <div class="row">
+
+                <div class="row-label">
+
+                    <div class="icon">
+                        #
+                    </div>
+
+                    GSTIN
+
+                </div>
+
+                <div class="row-value">
+
+                    <span class="gst">
+                        22XXXXXXXXXXXXXXX
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <div class="footer-brand">
+                rPlan — Project Controls Adviser
+            </div>
+
+            <div class="footer-accent"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
