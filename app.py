@@ -130,10 +130,6 @@ def pmc_02():  # <--- url_for('check_prof') looks for THIS name
 @app.route('/pmc_03')
 def pmc_03():  # <--- url_for('check_prof') looks for THIS name
     return render_template('pmc03.html')
-
-@app.route('/vision')
-def vision():  # <--- url_for('check_prof') looks for THIS name
-    return render_template('mission_vision.html')
 @app.route('/mission')
 def mission():  # <--- url_for('check_prof') looks for THIS name
     return render_template('mission.html')
