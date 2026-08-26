@@ -136,5 +136,8 @@ def mission():  # <--- url_for('check_prof') looks for THIS name
 @app.route('/vision')
 def vision():  # <--- url_for('check_prof') looks for THIS name
     return render_template('vision.html')
+@app.route('/statutes')
+def statutes():  # <--- url_for('check_prof') looks for THIS name
+    return render_template('statut.html')
 if __name__ == '__main__':
     app.run(debug=True)
