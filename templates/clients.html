@@ -18,142 +18,149 @@
         
         .huge-card:hover {
             border-color: rgba(20, 184, 166, 0.6);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(20, 184, 166, 0.2);
-            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), 0 0 32px rgba(20, 184, 166, 0.2);
+            transform: translateY(-8px) scale(1.02);
         }
     </style>
 </head>
-<body class="min-h-screen py-32 px-10">
+<!-- Reduced overall padding from py-32 px-10 to py-24 px-6 -->
+<body class="min-h-screen py-24 px-6">
 
-    <div class="max-w-[1600px] mx-auto">
-        <div class="text-center mb-32">
-            <h1 class="text-6xl md:text-8xl font-black text-white tracking-tight mb-8">Clients <span class="text-teal-400">Served To Date</span></h1>
+    <!-- Scaled down max-width by 20% (1600px * 0.8 = 1280px / max-w-7xl) -->
+    <div class="max-w-7xl mx-auto">
+        <!-- Reduced margin bottom from mb-32 to mb-24 -->
+        <div class="text-center mb-24">
+            <!-- Scaled down text from 8xl to 6xl/7xl -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6">Clients <span class="text-teal-400">Served To Date</span></h1>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+        <!-- Reduced gap from gap-12 to gap-8 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             
-            <!-- LOGO 1: Removed grayscale, added w-full/h-full for full frame -->
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
+                <!-- Reduced padding from p-8 to p-6 -->
                 <img src="{{ url_for('static', filename='bpcl.jpg') }}" 
                      alt="BPCL" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <!-- LOGO 2: Add more blocks like this for your 18 logos -->
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='daynite.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='hmel.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-           <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+           <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='radiant.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='trilok.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='equiv.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='hpcl.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
             
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='mit.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='streven.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='ppl.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='gopec.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='cim_maintenance_logo.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='cadd.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='cpcl.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='mrpl.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='educba.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
 
-            <div class="huge-card aspect-[16/9] rounded-[2rem] flex items-center justify-center cursor-pointer group">
+            <div class="huge-card aspect-[16/9] rounded-[1.5rem] flex items-center justify-center cursor-pointer group">
                 <img src="{{ url_for('static', filename='oriental.jpg') }}" 
                      alt="Partner 2" 
-                     class="w-full h-full object-contain p-8 transition-transform duration-700 group-hover:scale-110">
+                     class="w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-110">
             </div>
         </div>
     </div>
 
     <!-- Enhanced "And Many More" Section -->
-<div class="flex flex-col items-center justify-center py-32 space-y-8">
-    <div class="w-full h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent"></div>
-    
-    <div class="relative group cursor-pointer">
-        <span class="text-3xl md:text-4xl font-light text-white tracking-[0.2em] lowercase transition-all duration-500 group-hover:text-teal-400 group-hover:tracking-[0.4em]">
-            And many more...
-        </span>
-        <!-- Decorative Glow -->
-        <div class="absolute -inset-4 bg-teal-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+    <!-- Scaled spacing down: py-32 -> py-24, space-y-8 -> space-y-6 -->
+    <div class="flex flex-col items-center justify-center py-24 space-y-6">
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent"></div>
+        
+        <div class="relative group cursor-pointer">
+            <!-- Scaled font down: text-4xl -> text-3xl -->
+            <span class="text-2xl md:text-3xl font-light text-white tracking-[0.2em] lowercase transition-all duration-500 group-hover:text-teal-400 group-hover:tracking-[0.3em]">
+                And many more...
+            </span>
+            <!-- Decorative Glow -->
+            <div class="absolute -inset-4 bg-teal-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        </div>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent"></div>
     </div>
 
-    <div class="w-full h-px bg-gradient-to-r from-transparent via-teal-500/30 to-transparent"></div>
-</div>
-
-    <div class="text-center mt-32">
-        <a href="{{ url_for('home') }}" class="text-teal-500 hover:text-white transition-all font-bold uppercase tracking-[0.3em] text-lg">
+    <!-- Scaled mt-32 -> mt-24, text-lg -> text-base -->
+    <div class="text-center mt-24">
+        <a href="{{ url_for('home') }}" class="text-teal-500 hover:text-white transition-all font-bold uppercase tracking-[0.3em] text-base">
             Back to Dashboard &rarr;
         </a>
     </div>
