@@ -111,13 +111,16 @@
             font-weight: 600;
         }
 
-        /* The rPlan Legacy Section */
+        /* The rPlan Legacy Section (Footer) */
         .rplan-legacy {
-            background-color: white;
+            background-color: var(--primary-dark);
             padding: 4rem 2rem;
             text-align: center;
-            border-top: 1px solid #eaeaea;
-            border-bottom: 1px solid #eaeaea;
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .rplan-legacy .section-title {
+            color: var(--accent-gold);
         }
 
         .rplan-legacy-content {
@@ -127,13 +130,13 @@
 
         .rplan-legacy-content p {
             font-size: 1.15rem;
-            color: #555;
+            color: #d1d5db; /* Adjusted for readability on dark background */
             margin-bottom: 1.5rem;
         }
         
-        .highlight {
+        .rplan-legacy .highlight {
             font-weight: bold;
-            color: var(--primary-dark);
+            color: var(--accent-gold); /* Adjusted to match the new dark background */
         }
         
         /* Responsive adjustments */
@@ -193,14 +196,14 @@
         </div>
     </section>
 
-    <!-- Current Legacy & rPlan Section -->
-    <section class="rplan-legacy">
+    <!-- Current Legacy & rPlan Section (Now a Semantic Footer) -->
+    <footer class="rplan-legacy">
         <div class="rplan-legacy-content">
             <h3 class="section-title">Carrying the Torch Forward</h3>
             <p>Guided by the enduring principles and pragmatic wisdom of Late Shri Sitaram Chaddha, <span class="highlight">The Chaddha Group</span> continues to follow closely in his footsteps.</p>
             <p>It is from this deep-rooted foundation of enterprise that <span class="highlight">rPlan</span> took its formal birth in the year 2022. Honoring a legacy of rapid growth and strategic foresight, rPlan took off within a few short years, standing today as a proud continuation of a remarkable entrepreneurial journey.</p>
         </div>
-    </section>
+    </footer>
 
 </body>
 </html>
