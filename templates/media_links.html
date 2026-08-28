@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Links | rPLAN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { 
+            background-color: #041213; /* Slightly darker for better contrast with glows */
+            color: #c9d1d9; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        /* Premium Glassmorphism */
+        .glass-card {
+            background: rgba(13, 56, 60, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(20, 184, 166, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .glass-card:hover {
+            background: rgba(13, 56, 60, 0.5);
+            border-color: rgba(20, 184, 166, 0.4);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(20, 184, 166, 0.1);
+            transform: translateY(-4px);
+        }
+
+        /* Ambient Background Glows */
+        .glow-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: 0;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .glow-1 {
+            top: -10%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, transparent 70%);
+        }
+
+        .glow-2 {
+            bottom: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(14, 116, 144, 0.3) 0%, transparent 70%);
+        }
+
+        /* Button Hover Effects */
+        .btn-gradient {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(14, 116, 144, 0.2));
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.8), rgba(14, 116, 144, 0.8));
+            color: white;
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+            border-color: transparent;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #2dd4bf, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-24 px-6 relative flex flex-col items-center">
+
+    <!-- Background Decor -->
+    <div class="glow-blob glow-1"></div>
+    <div class="glow-blob glow-2"></div>
+
+    <div class="max-w-6xl w-full mx-auto relative z-10">
+        
+        <div class="text-center mb-24">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6">
+                Media & <span class="text-gradient">Insights</span>
+            </h1>
+            <p class="text-xl text-teal-100/70 font-light tracking-wide max-w-2xl mx-auto">
+                Explore our published articles, featured interviews, and connect with our leadership network.
+            </p>
+        </div>
+
+        <div class="flex items-center gap-4 mb-10">
+            <h2 class="text-3xl font-bold text-white tracking-wide">In the Spotlight</h2>
+            <div class="h-px bg-teal-500/30 flex-grow"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24">
+            
+            <!-- LinkedIn Article Card (Enhanced) -->
+            <div class="glass-card rounded-3xl p-10 flex flex-col h-full justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-600/10 flex items-center justify-center border border-blue-500/20 group-hover:bg-blue-600/20 transition-colors duration-300">
+                            <i class="fa-brands fa-linkedin-in text-3xl text-blue-400"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-400/10 py-1.5 px-3 rounded-full">Published Article</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4 leading-snug">
+                        Sneak peek into the future of TA Controls
+                    </h3>
+                    <p class="text-teal-100/70 text-lg mb-8 font-light leading-relaxed">
+                        Authored by Rishi Chaddha (PMP®, PMI-SP®). Dive into a comprehensive analysis of the evolution, challenges, and future landscape of Turnaround (TA) Controls in modern industry.
+                    </p>
+                </div>
+                <a href="https://www.linkedin.com/pulse/sneak-peek-future-ta-controls-rishi-chaddha-pmp-pmi-sp-/" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="btn-gradient inline-flex items-center justify-center gap-3 text-teal-300 py-4 px-8 rounded-xl font-semibold w-full sm:w-auto self-start text-lg">
+                    Read on LinkedIn <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                </a>
+            </div>
+
+            <!-- YouTube / Podcast Card (Corrected & Enhanced) -->
+            <div class="glass-card rounded-3xl p-10 flex flex-col h-full justify-between group">
+                <div>
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="w-16 h-16 rounded-2xl bg-red-600/10 flex items-center justify-center border border-red-500/20 group-hover:bg-red-600/20 transition-colors duration-300">
+                            <i class="fa-solid fa-microphone-lines text-3xl text-red-500"></i>
+                        </div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-red-400 bg-red-400/10 py-1.5 px-3 rounded-full">Featured Interview</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4 leading-snug">
+                        Founder's Spotlight & Live Podcast
+                    </h3>
+                    <p class="text-teal-100/70 text-lg mb-8 font-light leading-relaxed">
+                        Watch our founder, Rishi Chaddha, featured as a special guest. Gain valuable insights as he discusses industry trends, project management strategies, and entrepreneurial vision.
+                    </p>
+                </div>
+                <a href="https://www.youtube.com/channel/UCR08l3RBj7zAdD4MnuPuicw" 
+                   target="_blank" rel="noopener noreferrer" 
+                   class="btn-gradient inline-flex items-center justify-center gap-3 text-teal-300 py-4 px-8 rounded-xl font-semibold w-full sm:w-auto self-start text-lg">
+                    Watch the Feature <i class="fa-brands fa-youtube text-lg"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="flex items-center gap-4 mb-10">
+            <h2 class="text-3xl font-bold text-white tracking-wide">Professional Network</h2>
+            <div class="h-px bg-teal-500/30 flex-grow"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Rishi Chaddha Profile -->
+            <a href="https://www.linkedin.com/in/rishi-chaddha-pmp%C2%AE-pmi-sp%C2%AE-483a8535/" 
+               target="_blank" rel="noopener noreferrer"
+               class="glass-card rounded-2xl p-6 flex items-center gap-6 group cursor-pointer hover:bg-[#0a66c2]/5">
+                <div class="w-16 h-16 rounded-full bg-[#0a66c2]/10 flex-shrink-0 flex items-center justify-center border border-[#0a66c2]/30 group-hover:bg-[#0a66c2]/20 transition-colors">
+                    <img src="https://ui-avatars.com/api/?name=Rishi+Chaddha&background=0a66c2&color=fff&rounded=true" alt="Rishi Chaddha" class="w-12 h-12 rounded-full opacity-80 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-xl font-bold text-white group-hover:text-teal-300 transition-colors">Rishi Chaddha</h4>
+                    <p class="text-teal-100/50 text-sm mt-1">Founder • PMP®, PMI-SP®</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-teal-500/50 group-hover:bg-teal-500/20 group-hover:text-teal-400 transition-all">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </a>
+
+            <!-- rPlan Company Profile -->
+            <a href="https://www.linkedin.com/in/r-plan-797aa5184/" 
+               target="_blank" rel="noopener noreferrer"
+               class="glass-card rounded-2xl p-6 flex items-center gap-6 group cursor-pointer hover:bg-teal-500/5">
+                <div class="w-16 h-16 rounded-full bg-teal-500/10 flex-shrink-0 flex items-center justify-center border border-teal-500/30 group-hover:bg-teal-500/20 transition-colors">
+                    <i class="fa-solid fa-building text-2xl text-teal-400"></i>
+                </div>
+                <div class="flex-grow">
+                    <h4 class="text-xl font-bold text-white group-hover:text-teal-300 transition-colors">rPlan Official</h4>
+                    <p class="text-teal-100/50 text-sm mt-1">Company Page</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-teal-500/50 group-hover:bg-teal-500/20 group-hover:text-teal-400 transition-all">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="text-center mt-32 w-full z-10 relative">
+        <a href="{{ url_for('home') }}" class="inline-flex items-center justify-center gap-3 text-teal-500 hover:text-white transition-all font-bold uppercase tracking-[0.2em] text-sm group">
+            <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition-transform"></i> Back to Dashboard
+        </a>
+    </div>
+
+</body>
+</html>
