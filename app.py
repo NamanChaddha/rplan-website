@@ -144,5 +144,8 @@ def statutes():  # <--- url_for('check_prof') looks for THIS name
 @app.route('/about')
 def about():  # <--- url_for('check_prof') looks for THIS name
     return render_template('about_us.html')
+@app.route('/media_links')
+def media():  # <--- url_for('check_prof') looks for THIS name
+    return render_template('media_links.html')
 if __name__ == '__main__':
     app.run(debug=True)
