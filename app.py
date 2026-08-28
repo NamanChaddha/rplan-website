@@ -37,9 +37,7 @@ PROJECT_DATABASE = {
         'sub': "Supervised the track laid piping between Utilities to various units."
     }
 }
-@app.route('/tribute')
-def about():
-    return render_template('tribute.html')
+
 @app.route('/')
 def home():
     """Renders the main expert project consultancy homepage."""
@@ -49,7 +47,9 @@ def home():
 def tce():
     """Renders the standalone dedicated historical track record page."""
     return render_template('tce.html')
-
+@app.route('/tribute')
+def about():
+    return render_template('tribute.html')
 @app.route('/api/project/<string:company_key>')
 def get_project_details(company_key):
     lookup_key = company_key.lower().strip()
