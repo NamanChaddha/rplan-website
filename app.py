@@ -48,7 +48,7 @@ def tce():
     """Renders the standalone dedicated historical track record page."""
     return render_template('tce.html')
 @app.route('/tribute')
-def about():
+def tribute():
     return render_template('tribute.html')
 @app.route('/api/project/<string:company_key>')
 def get_project_details(company_key):
