@@ -37,7 +37,9 @@ PROJECT_DATABASE = {
         'sub': "Supervised the track laid piping between Utilities to various units."
     }
 }
-
+@app.route('/tribute')
+def about():
+    return render_template('tribute.html')
 @app.route('/')
 def home():
     """Renders the main expert project consultancy homepage."""
