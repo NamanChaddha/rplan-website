@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Late Shri Sitaram Chaddha | rPlan</title>
+    <style>
+        :root {
+            --primary-dark: #126160; /* Peacock Green */
+            --accent-gold: #d1b075; /* Slightly warmed up gold to complement the green */
+            --text-light: #f4f4f4;
+            --text-dark: #333333;
+            --bg-light: #f8faf9; /* Added a very faint green tint to the light background */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .tribute-hero {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        .tribute-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .tribute-hero h2 {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 0;
+            font-style: italic;
+        }
+
+        .tribute-hero p {
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+            font-size: 1.1rem;
+            color: #d1d5db;
+        }
+
+        /* Timeline / Companies Section */
+        .legacy-section {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .company-name {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* The rPlan Legacy Section */
+        .rplan-legacy {
+            background-color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .rplan-legacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .rplan-legacy-content p {
+            font-size: 1.15rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .tribute-hero {
+                padding: 3rem 1.5rem;
+            }
+            .tribute-hero h1 {
+                font-size: 2rem;
+            }
+            .tribute-hero h2 {
+                font-size: 1.25rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="tribute-hero">
+        <h1>Late Shri Sitaram Chaddha</h1>
+        <h2>A Legacy of Pragmatic Genius & Entrepreneurial Pursuit</h2>
+        <p>This page serves as a humble tribute to a visionary whose relentless drive, sharp intellect, and pragmatic approach to business laid the foundation for decades of success. His entrepreneurial spirit continues to guide us today.</p>
+    </header>
+
+    <!-- The Journey Section -->
+    <section class="legacy-section">
+        <h3 class="section-title">The Foundation Stones</h3>
+        
+        <div class="timeline">
+            <!-- Company 1 -->
+            <div class="timeline-card">
+                <div class="year">1990</div>
+                <div class="company-name">M/S Immaculate Enterprises</div>
+                <p>The inaugural venture that sparked a decades-long entrepreneurial journey, establishing a benchmark for operational excellence and visionary leadership.</p>
+            </div>
+
+            <!-- Company 2 -->
+            <div class="timeline-card">
+                <div class="year">2004</div>
+                <div class="company-name">M/S Tushar Trading Company</div>
+                <p>A flourishing enterprise that further cemented his reputation in the trading sector. This chapter was respectfully wound up following his passing, preserving its memory and integrity.</p>
+            </div>
+
+            <!-- Company 3 -->
+            <div class="timeline-card">
+                <div class="year">2011</div>
+                <div class="company-name">M/s BREdutech</div>
+                <p>A testament to his forward-thinking mindset, expanding the group's horizons and demonstrating an unwavering commitment to growth and evolution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Legacy & rPlan Section -->
+    <section class="rplan-legacy">
+        <div class="rplan-legacy-content">
+            <h3 class="section-title">Carrying the Torch Forward</h3>
+            <p>Guided by the enduring principles and pragmatic wisdom of Late Shri Sitaram Chaddha, <span class="highlight">The Chaddha Group</span> continues to follow closely in his footsteps.</p>
+            <p>It is from this deep-rooted foundation of enterprise that <span class="highlight">rPlan</span> took its formal birth in the year 2022. Honoring a legacy of rapid growth and strategic foresight, rPlan took off within a few short years, standing today as a proud continuation of a remarkable entrepreneurial journey.</p>
+        </div>
+    </section>
+
+</body>
+</html>
