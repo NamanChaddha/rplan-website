@@ -207,16 +207,19 @@
                     </div>
                 </div>
             </div>
-          <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='project_controls.pdf') }}')" class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project controls</a>
-            <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Trainings</a>
-            <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
-                                <div class="py-1">
-                                    <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-scheduling-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">P6 EPPM Scheduling</a>
-                                </div>
-                                <div class="py-1">
-                                    <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='p6_scheduling.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">P6 OPC Scheduling</a>
-                                </div>
-            </div>
+          < div class="relative group/sub"> 
+              <!-- Trainings --> 
+              <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Trainings
+                <span>
+              </span> </a>
+              <!-- Trainings submenu -->
+              <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"> 
+                  <div class="py-1"> 
+                      <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-scheduling-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> P6 EPPM Scheduling </a> 
+                  </div> 
+                 <div class="py-1">
+                  <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='p6_scheduling.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> P6 OPC Scheduling </a>
+                 </div> </div> </div>
             <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='resourcing.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Licensing</a>
             <a href="javascript:void(0)"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Resourcing</a>
             
