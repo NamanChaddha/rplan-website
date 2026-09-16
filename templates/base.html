@@ -161,7 +161,7 @@
         </div>
     </div>
 
-    <nav class="bg-[#0d1117]/80 backdrop-blur-sm shadow-lg sticky top-0 z-40 border-b border-gray-700/50">
+ <nav class="bg-[#0d1117]/80 backdrop-blur-sm shadow-lg sticky top-0 z-40 border-b border-gray-700/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
@@ -169,89 +169,130 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-2">
-                         <div class="relative group">
-                            <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
-                                 <a href="/">HOME</a> 
-                            </button>
-                         </div>
-                        <!-- ABOUT US -->
+                        
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 ABOUT US <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
                             <div class="dropdown-menu hidden absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
                                 <div class="py-1">
-                                    <a href="{{ url_for('about') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Brief</a>
-                                    <a href="{{ url_for('statutes') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Statutes</a>
+                                    <a href="{{ url_for('about') }} "  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Brief</a>
+                                    <a href="{{ url_for('statutes') }}"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Statutes</a>
                                     <a href="{{ url_for('mission') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Mission</a>   
                                     <a href="{{ url_for('vision') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Vision</a>                                    
-                                    <a href="{{ url_for('media') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Media Links</a>
-                                    <a href="{{ url_for('tribute') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Tribute</a>
+                                    <a href="{{ url_for('media') }}"  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Media Links</a>
+                                    <a href="{{ url_for('tribute') }} "  class=" block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Tribute</a>
+
+
                                 </div>
                             </div>
                         </div>
 
-                        <!-- OPERATIONS -->
-                        <div class="relative group">
-                            <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
-                                OPERATIONS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
-                            </button>
-                            <div class="dropdown-menu hidden absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
-                                <div class="py-1">
-                                    <div class="relative group/sub">
-                                        <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-                                            <span>Scheduling</span>
-                                            <i class="fas fa-chevron-right text-xs"></i>
-                                        </a>
-                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
-                                            <div class="py-1">
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rules.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Schedule Rules</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="relative group/sub">
-                                        <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-                                            <span>Project controls</span>
-                                            <i class="fas fa-chevron-right text-xs"></i>
-                                        </a>
-                                        <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
-                                            <div class="py-1">
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='variance.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Control Variances</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='acronyms.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Control Acronyms</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='important_formulae.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Important Formulae</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='cost_control.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Cost Control</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="relative group/sub">
-                                        <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-                                            <span>Trainings</span>
-                                            <i class="fas fa-chevron-right text-xs"></i>
-                                        </a>
-                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
-                                            <div class="py-1">
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-scheduling-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">P6 EPPM Scheduling</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='p6_scheduling.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">P6 OPC Scheduling</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='resourcing.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Licensing</a>
-                                    <div class="relative group/sub">
-                                        <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-                                            <span>Resourcing</span>
-                                            <i class="fas fa-chevron-right text-xs"></i>
-                                        </a>
-                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
-                                            <div class="py-1">
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='resourcing_flowchart.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Resourcing flowchart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+ <div class="relative group">
+    <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
+        OPERATIONS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+    </button>
+    <div class="dropdown-menu hidden absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
+        <div class="py-1">
+            <!-- Removed stray </a> tags here -->
+            <div class="relative group/sub">
+                <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                    <span>Scheduling</span>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </a>
 
-                        <!-- PORTFOLIOS -->
+                <!-- Removed stray backslash (\) from class below -->
+                <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
+                    <div class="py-1">
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rules.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Schedule Rules</a>
+                    </div>
+                </div>
+            </div>
+<!-- Project Controls with Sub-menu -->
+<div class="relative group/sub">
+    <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+        <span>Project controls</span>
+        <i class="fas fa-chevron-right text-xs"></i>
+    </a>
+
+    <!-- The flyout sub-menu containing a, b, c, d -->
+    <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
+        <div class="py-1">
+            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='variance.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Control Variances</a>
+            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='acronyms.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Control Acronyms </a>
+            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='important_formulae.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Important Formulae</a>
+            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='cost_control.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Project Cost Control</a>
+        </div>
+    </div>
+</div>
+<!-- Trainings -->
+<div class="relative group/sub">
+
+    <a href="javascript:void(0)"
+       class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+        <span>Trainings</span>
+        <i class="fas fa-chevron-right text-xs"></i>
+    </a>
+
+    <!-- Trainings submenu -->
+    <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
+        <div class="py-1">
+
+            <a href="javascript:void(0)"
+               onclick="openPDF('{{ url_for('static', filename='rplan-scheduling-r0.pdf') }}')"
+               class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                P6 EPPM Scheduling
+            </a>
+
+            <a href="javascript:void(0)"
+               onclick="openPDF('{{ url_for('static', filename='p6_scheduling.pdf') }}')"
+               class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                P6 OPC Scheduling
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Licensing -->
+<a href="javascript:void(0)"
+   onclick="openPDF('{{ url_for('static', filename='resourcing.pdf') }}')"
+   class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+    Licensing
+</a>
+
+<!-- Resourcing -->
+<div class="relative group/sub">
+
+    <a href="javascript:void(0)"
+       class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+        <span>Resourcing</span>
+        <i class="fas fa-chevron-right text-xs"></i>
+    </a>
+
+    <!-- resourcing submenu -->
+    <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
+        <div class="py-1">
+
+            <a href="javascript:void(0)"
+               onclick="openPDF('{{ url_for('static', filename='resourcing_flowchart.pdf') }}')"
+               class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                Resourcing flowchart
+            </a>
+        </div>
+    </div>
+
+</div>
+
+            
+            <!-- ADDED WRAPPER: relative group/sub -->
+            
+            <!-- END WRAPPER -->
+        </div>
+    </div>
+</div>
+
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 PORTFOLIOS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
@@ -272,14 +313,16 @@
                                                 <a href="{{ url_for('EPCM_05') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">EPCM05</a>                                            
                                             </div>
                                         </div>
-                                    </div>
+                        </div>
                                     <div class="relative group/sub w-full"> 
-                                        <a href="#" class="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-                                            <span> STO/TA</span>
-                                            <i class="fas fa-chevron-right text-xs"></i>
-                                        </a>
-                                        <div class="absolute top-0 left-full w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
-                                            <div class="py-1">                                                
+                                            <div class="relative group/sub">
+
+                                    <!-- 2. The trigger item goes INSIDE the wrapper -->
+                                    <a href="#" class="flex items-center justify-between w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                                        <span> STO/TA</span>
+                                        <i class="fas fa-chevron-right text-xs"></i>
+                                    </a>
+<div class="absolute top-0 left-full w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">                                                <div class="py-1">                                                
                                                 <a href="{{ url_for('stota_01') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">STO/TA 01</a>                                            
                                                 <a href="{{ url_for('stota_02') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">STO/TA 02</a>                                            
                                                 <a href="{{ url_for('stota_03') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">STO/TA 03</a>                                            
@@ -292,8 +335,9 @@
                                                 <a href="{{ url_for('stota_10') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">STO/TA 10</a>                                            
                                                 <a href="{{ url_for('stota_11') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">STO/TA 11</a>                                            
                                                 <a href="{{ url_for('stota_12') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">STO/TA 12</a>                                            
-                                            </div>
-                                        </div>
+                                                </div>
+    </div>
+</div>
                                     </div>
                                     <div class="relative group/sub">
                                         <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
@@ -308,23 +352,30 @@
                                         </div>
                                     </div>
                                     <div class="relative group/sub">
+                                        <div class="relative group/sub">
+
                                         <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
                                             <span> PM Consultancy</span>
                                             <i class="fas fa-chevron-right text-xs"></i>
                                         </a>
-                                        <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
-                                            <div class="py-1">
-                                                <a href="{{ url_for('pmc_01') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">PMC01</a>
-                                                <a href="{{ url_for('pmc_02') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">PMC02</a>
-                                                <a href="{{ url_for('pmc_03') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">PMC03</a>
-                                            </div>
+                                    <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
+                                        <div class="py-1">
+                                            <a href="{{ url_for('pmc_01') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">PMC01</a>
+                                            <a href="{{ url_for('pmc_02') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">PMC02</a>
+                                            <a href="{{ url_for('pmc_03') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">PMC03</a>
+
                                         </div>
                                     </div>
+</div>
+                                    </div>
                                 </div>
+                                
+
+
                             </div>
+                            
                         </div>
 
-                        <!-- TRAININGS -->
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 TRAININGS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
@@ -336,63 +387,190 @@
                                 <div class="py-1">
                                     <a href="{{ url_for('training_pics') }}" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Training pics</a>
                                 </div>
+                                
                             </div>
                         </div>
 
-                        <!-- USP (TA PLANNING) -->
                         <div class="relative group">
                             <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
                                 USP (TA PLANNING) <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
                             </button>
                             <div class="dropdown-menu hidden absolute z-10 mt-2 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
                                 <div class="py-1">
-                                    <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='international_codes.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> International Codes</a>
-                                    
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='international_codes.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> International Codes</a>
                                     <div class="relative group/sub">
                                         <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Static Equipment</span><i class="fas fa-chevron-right text-xs"></i></a>
-                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
-                                            <div class="py-1">
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-column-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Columns</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-heaters-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Heaters</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-exchanger-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Exchangers</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-reactors-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Reactors</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-vessles-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Vessels / Filters / Drums</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-afc-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">AirFin Coolers</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-structural-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Structural</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-stacks-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Stacks</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-_____-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Pits & Drains</a>
-                                            </div>
-                                        </div>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-column-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Columns</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-heaters-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Heaters</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-exchanger-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Exchangers</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-reactors-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Reactors</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-vessles-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Vessels / Filters / Drums</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-afc-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">AirFin Coolers</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-structural-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Structural</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-stacks-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Stacks</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-_____-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Pits & Drains</a>
+                                        </div></div>
                                     </div>
                                     <div class="relative group/sub">
                                         <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Rotating Equipment</span><i class="fas fa-chevron-right text-xs"></i></a>
-                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
-                                            <div class="py-1">
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-compressors-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Compressors</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Pumps-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Pumps</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Turbines-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Stacks</a>
-                                                <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-fans-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Fans & Motors</a>
-                                            </div>
-                                        </div>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-compressors-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Compressors</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Pumps-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Pumps</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Turbines-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Stacks</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-fans-r0.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Fans & Motors</a>
+                                        </div></div>
                                     </div>
                                     <div class="relative group/sub">
                                         <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Controls</span><i class="fas fa-chevron-right text-xs"></i></a>
-                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
-                                            <div class="py-1">
-                                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Field Side</a>
-                                                <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Control Room</a>
-                                            </div>
-                                        </div>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Field Side</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Panel Side</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='automation.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Automation</a>
+                                        </div></div>
+                                    </div>
+                                    <div class="relative group/sub">
+                                        <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Valves</span><i class="fas fa-chevron-right text-xs"></i></a>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Control-vlv.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Control</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Butterfly-vlv.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Butterfly</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-globe-vlv.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Globe</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-Ballvalve.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Ball</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='rplan-check-vlv.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Check</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Actuators</a>
+                                        </div></div>
+                                    </div>
+                                    <div class="relative group/sub">
+                                        <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span> Specialist Services</span><i class="fas fa-chevron-right text-xs"></i></a>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Scaffolding</a>
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Insulation</a>
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Painting</a>
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Hydrojetting</a>
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Catalyst Handling</a>
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Refractory</a>
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Insitu Machining</a>
+                                             <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">Rope Access</a>
+                                        </div></div>
+                                    </div>
+                                    <div class="relative group/sub">
+                                        <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>Critical Equipment</span><i class="fas fa-chevron-right text-xs"></i></a>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Flare Tips</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Boilers</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Piping</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Regen/Reactors</a>
+                                        </div></div>
+                                    </div>
+                                     <div class="relative group/sub">
+                                        <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Electrical</span><i class="fas fa-chevron-right text-xs"></i></a>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Transformers</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Switchgear</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Cabling</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  DBs</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  VFDs</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Switches</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Motors</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Supports</a>
+                                        </div></div>
+                                    </div>
+                                    <div class="relative group/sub">
+                                        <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Instrumentation</span><i class="fas fa-chevron-right text-xs"></i></a>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  IBs</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Supports</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Cabling</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Testing</a>
+                                        </div></div>
+                                    </div>
+                                    <div class="relative group/sub">
+                                        <a href="#" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"><span>  Plant Demographics</span><i class="fas fa-chevron-right text-xs"></i></a>
+                                        <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block"><div class="py-1">
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Systems Bifurcation</a>
+
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Battery Limits</a>
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='pandidsymbols.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> P&ID Symbols</a>
+
+                                            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='units.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Units & Areas</a>
+
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Nomenclatures</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Colour Codes</a>
+                                            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Thermodynamics</a>
+                                        </div></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="relative group">
+                            <button class="menu-button text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200">
+                                PLANNING TOOLS <i class="fas fa-chevron-down ml-2 text-xs transition-transform group-hover:rotate-180"></i>
+                            </button>
+                            <div class="dropdown-menu hidden absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5">
+                                <div class="py-1">
+                                    <div class="relative group/sub">
+                <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+                    <span>P6</span>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </a>
+
+                <!-- Removed stray backslash (\) from class below -->
+                <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
+                    <div class="py-1">
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='shortcut_keys.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Short cut keys</a>
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='icons.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> icons</a>
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='P6_interface.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> P6 Interface</a>
+                        <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='quality_check.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200"> Schedule quality check</a>
+
                     </div>
                 </div>
             </div>
+            <!-- ADDED WRAPPER: groups the EVM link and its dropdown together -->
+<div class="relative group/sub">
+    
+    <!-- Trigger Link -->
+    <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+        <span>EVM</span>
+        <i class="fas fa-chevron-right text-xs"></i>
+    </a>
+    
+    <!-- Submenu Dropdown -->
+    <div class="absolute top-0 left-full -mt-1 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block">
+        <div class="py-1">
+            <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='overview.pdf') }}')" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">overview</a>
+        </div>
+    </div>
+
+</div>
+<!-- END WRAPPER -->
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  MSP</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Power Bi</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Advanced Analytics</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">  Historical Reports Gallery</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ url_for('certifications') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">CREDENTIALS</a>
+                        <a href="{{ url_for('client') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">CLIENTS</a>
+
+                    </div>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <i id="mobile-menu-icon" class="fas fa-bars h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"></div>
         </div>
     </nav>
+    
 
     <!-- MAIN PAGE CONTENT WILL BE INJECTED HERE -->
     <main class="min-h-screen">
