@@ -207,10 +207,27 @@
                     </div>
                 </div>
             </div>
+<!-- Project Controls with Sub-menu -->
+<div class="relative group/sub">
+    <a href="javascript:void(0)" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
+        <span>Project controls</span>
+        <i class="fas fa-chevron-right text-xs"></i>
+    </a>
+
+    <!-- The flyout sub-menu containing a, b, c, d -->
+    <div class="absolute top-0 left-full -mt-1 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover/sub:block z-50">
+        <div class="py-1">
+            <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">a</a>
+            <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">b</a>
+            <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">c</a>
+            <a href="javascript:void(0)" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">d</a>
+        </div>
+    </div>
+</div>
 <a href="javascript:void(0)"
    onclick="openPDF('{{ url_for('static', filename='project_controls.pdf') }}')"
    class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200">
-    Project controls
+    Project controls2
 </a>
 
 <!-- Trainings -->
