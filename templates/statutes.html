@@ -1,76 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statute | rPLAN</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<style>
-  body {
-    background-color: #070e17;
-    background-image: 
-      radial-gradient(circle at top right, rgba(0, 212, 255, 0.08), transparent 50%),
-      radial-gradient(circle at bottom left, rgba(6, 124, 138, 0.15), transparent 50%);
-    color: #cbd5e1;
-    font-family: 'Inter', sans-serif;
-  }
-</style>
-</head>
-<body class="min-h-screen flex flex-col items-center py-16 px-6">
+{% extends "base.html" %}
 
-  <div class="max-w-3xl w-full">
-    <!-- Header -->
-    <div class="mb-12 text-center">
-      <h1 class="text-4xl font-bold text-white uppercase tracking-[0.2em] mb-4">Statute</h1>
-      <div class="w-20 h-1 bg-cyan-500 mx-auto"></div>
-    </div>
+{% block title %}Statute | rPLAN{% endblock %}
 
-    <!-- Official Document Container -->
-    <div class="bg-gradient-to-b from-[#0b1924] to-[#163042] border border-cyan-900/30 p-10 rounded-xl shadow-2xl relative overflow-hidden">
-      <!-- Watermark -->
-      <i class="fas fa-landmark absolute -right-10 -bottom-10 text-[200px] text-white opacity-[0.02]"></i>
-      
-      <div class="relative z-10">
-        <span class="text-cyan-400 text-xs font-bold uppercase tracking-[0.3em]">Corporate Bylaws</span>
-        <h2 class="text-2xl text-white font-medium mt-2 mb-6">Registered office</h2>
+{% block extra_css %}
+    .statute-bg {
+        background-color: #070e17;
+        background-image: 
+            radial-gradient(circle at top right, rgba(0, 212, 255, 0.08), transparent 50%),
+            radial-gradient(circle at bottom left, rgba(6, 124, 138, 0.15), transparent 50%);
+    }
+{% endblock %}
+
+{% block content %}
+
+<section class="min-h-[85vh] flex flex-col items-center py-16 px-6 statute-bg">
+    <div class="max-w-3xl w-full">
         
-        <div class="space-y-6 text-gray-300 leading-relaxed font-light">
-          <p>39, Mermaid-1 CHS Ltd, Sector,11,<br>
-CBD Belapur, Navi Mumbai,<br>
-Maharashtra, India <BR>
-PIN 400614</p>
-          
-          
-
-
-<p><i class="bi bi-telephone-fill"> +91 9820847451 </i><br>
-
-email: rplanprojectcontrol@gmail.com<br> rishichaddha@rplan-pc.com
- 
-GST No: 27AAXPC0200H1Z2</p>
-          </div>
-
-          <div class="border-l-2 border-cyan-500 pl-6 py-2">
-            <h4 class="text-white font-semibold mb-2">Section 2: Ethical Compliance</h4>
-            <p>We mandate total transparency in resource management, stakeholder communication, and contractual obligations to foster trust and long-term sustainability.</p>
-          </div>
-
-          <p class="pt-4 text-sm text-gray-500 italic border-t border-cyan-900/50 mt-8">
-            These articles are subject to annual review to align with evolving global industrial standards.
-          </p>
+        <!-- Header -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-white uppercase tracking-[0.2em] mb-4">Statute</h1>
+            <div class="w-20 h-1 bg-cyan-500 mx-auto"></div>
         </div>
-      </div>
-    </div>
 
-    <!-- Navigation -->
-    <div class="mt-10 text-center">
-      <a href="index.html" class="inline-flex items-center gap-3 text-cyan-400 hover:text-white transition-all uppercase tracking-widest text-sm font-bold border border-cyan-900/50 px-6 py-3 rounded-full hover:bg-cyan-900/20">
-        <i class="fas fa-arrow-left"></i> Back to Home
-      </a>
-    </div>
-  </div>
+        <!-- Official Document Container -->
+        <div class="bg-gradient-to-b from-[#0b1924] to-[#163042] border border-cyan-900/30 p-10 rounded-xl shadow-2xl relative overflow-hidden">
+            <!-- Watermark -->
+            <i class="fas fa-landmark absolute -right-10 -bottom-10 text-[200px] text-white opacity-[0.02] pointer-events-none"></i>
+            
+            <div class="relative z-10">
+                <span class="text-cyan-400 text-xs font-bold uppercase tracking-[0.3em]">Corporate Bylaws</span>
+                <h2 class="text-2xl text-white font-medium mt-2 mb-6">Registered Office</h2>
+                
+                <div class="space-y-6 text-gray-300 leading-relaxed font-light mb-8">
+                    <p>
+                        39, Mermaid-1 CHS Ltd, Sector 11,<br>
+                        CBD Belapur, Navi Mumbai,<br>
+                        Maharashtra, India <br>
+                        PIN 400614
+                    </p>
+                    
+                    <p>
+                        <i class="fas fa-phone text-cyan-500 mr-2"></i> +91 9820847451<br>
+                        <i class="fas fa-envelope text-cyan-500 mr-2 mt-2"></i> rplanprojectcontrol@gmail.com<br>
+                        <i class="fas fa-envelope opacity-0 mr-2 mt-2"></i> rishichaddha@rplan-pc.com<br>
+                        <span class="block mt-2 font-medium text-gray-400">GST No: <span class="text-gray-200">27AAXPC0200H1Z2</span></span>
+                    </p>
+                </div>
 
-</body>
-</html>
+                <div class="border-l-2 border-cyan-500 pl-6 py-2">
+                    <h4 class="text-white font-semibold mb-2">Section 2: Ethical Compliance</h4>
+                    <p class="text-gray-300 font-light">We mandate total transparency in resource management, stakeholder communication, and contractual obligations to foster trust and long-term sustainability.</p>
+                </div>
+
+                <p class="pt-4 text-sm text-gray-500 italic border-t border-cyan-900/50 mt-8">
+                    These articles are subject to annual review to align with evolving global industrial standards.
+                </p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-10 text-center">
+            <!-- Note: Adjust 'index' to match your actual Flask route name for the homepage if different -->
+            <a href="{{ url_for('index') }}" class="inline-flex items-center gap-3 text-cyan-400 hover:text-white transition-all uppercase tracking-widest text-sm font-bold border border-cyan-900/50 px-6 py-3 rounded-full hover:bg-cyan-900/20">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+        
+    </div>
+</section>
+{% endblock %}
