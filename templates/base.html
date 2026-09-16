@@ -396,10 +396,54 @@
         {% endblock %}
     </main>
 
-    <!-- SCRIPTS (Put global JS logic here) -->
+    <!-- GLOBAL SCRIPTS -->
     <script>
-        // Place your JavaScript for the spotlight effect and dropdowns here 
-        // so it applies to every page automatically.
+        // Spotlight Effect
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            if(spotlight) {
+                spotlight.style.left = e.clientX + 'px';
+                spotlight.style.top = e.clientY + 'px';
+            }
+        });
+
+        // Dropdown Menu Toggle (Hover intent fallback for safety)
+        const groups = document.querySelectorAll('.group');
+        groups.forEach(group => {
+            const menu = group.querySelector('.dropdown-menu');
+            if (menu) {
+                group.addEventListener('mouseenter', () => menu.classList.remove('hidden'));
+                group.addEventListener('mouseleave', () => menu.classList.add('hidden'));
+            }
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('projectModal');
+        const closeModal = document.getElementById('closeModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        function openModal() {
+            if(modal) modal.classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            if(modal) modal.classList.add('hidden');
+        }
+
+        if(closeModal) closeModal.addEventListener('click', closeProjectModal);
+        if(closeModalBtn) closeModalBtn.addEventListener('click', closeProjectModal);
+        
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+
+        // PDF Opener placeholder function
+        function openPDF(url) {
+            window.open(url, '_blank');
+        }
     </script>
     
     {% block extra_scripts %}{% endblock %}
