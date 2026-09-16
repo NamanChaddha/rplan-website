@@ -123,6 +123,26 @@
         #projectModal.hidden {
             display: none;
         }
+
+        /* --- Educational Balloon Animations --- */
+        @keyframes balloonPop {
+            0% { transform: scale(0.5) translateY(50px); opacity: 0; }
+            70% { transform: scale(1.05) translateY(-10px); opacity: 1; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        @keyframes balloonDeflate {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.8) translateY(20px); opacity: 0; }
+        }
+
+        .animate-balloon-pop {
+            animation: balloonPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-balloon-deflate {
+            animation: balloonDeflate 0.4s ease-in forwards;
+        }
     </style>
 </head>
 <body class="bg-[#0d1117] text-gray-300">
@@ -1057,5 +1077,69 @@ document.addEventListener("keydown", function (e) {
         </div>
     </div>
 </div>
+
+<!-- Floating Educational Balloon (ADDED AS REQUESTED) -->
+<div id="edu-balloon-popup" class="hidden fixed bottom-10 right-10 z-[150] max-w-sm drop-shadow-2xl">
+    <div class="relative bg-gradient-to-br from-[#071F21] to-[#0d1117] border border-teal-500/40 p-6 rounded-2xl backdrop-blur-xl">
+        
+        <!-- Close Button -->
+        <button onclick="closeEduPopup()" class="absolute top-3 right-3 text-gray-500 hover:text-white transition-colors">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <!-- Content -->
+        <div class="flex items-start gap-4">
+            <div class="mt-1 w-10 h-10 shrink-0 rounded-full bg-teal-500/20 flex items-center justify-center border border-teal-500/40">
+                <i class="fas fa-lightbulb text-teal-400 text-lg"></i>
+            </div>
+            <div>
+                <h4 class="text-teal-300 font-bold mb-1 tracking-wide">Knowledge Hub</h4>
+                <p class="text-sm text-gray-300 leading-relaxed font-light">
+                    This platform is strictly an educational initiative. Our mission is the open exchange of industry know-how and world-class best practices in Project Controls.
+                </p>
+            </div>
+        </div>
+        
+        <!-- The Balloon Tail (CSS Triangles) -->
+        <div class="absolute -bottom-3 right-12 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[12px] border-t-teal-500/40"></div>
+        <div class="absolute -bottom-[10px] right-12 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-[#0d1117]"></div>
+    </div>
+</div>
+
+<!-- Educational Balloon Logic (ADDED AS REQUESTED) -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check SESSION storage to see if they just arrived
+        if (!sessionStorage.getItem("hasSeenEduPopup")) {
+            
+            // Wait 1.5 seconds after page load before popping up
+            setTimeout(() => {
+                const popup = document.getElementById("edu-balloon-popup");
+                if (popup) {
+                    popup.classList.remove("hidden");
+                    popup.classList.add("animate-balloon-pop");
+                }
+            }, 1500); 
+
+            // Save the sticky note for THIS specific browser session only
+            sessionStorage.setItem("hasSeenEduPopup", "true");
+        }
+    });
+
+    // Function to close the balloon manually
+    function closeEduPopup() {
+        const popup = document.getElementById("edu-balloon-popup");
+        if (popup) {
+            popup.classList.remove("animate-balloon-pop");
+            popup.classList.add("animate-balloon-deflate");
+            
+            // Hide completely after the deflation animation finishes
+            setTimeout(() => {
+                popup.classList.add("hidden");
+            }, 400); 
+        }
+    }
+</script>
+
 </body>
 </html>
