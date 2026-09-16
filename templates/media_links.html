@@ -1,83 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Links | rPLAN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% extends "base.html" %}
+
+{% block title %}Media Links | rPLAN{% endblock %}
+
+{% block extra_css %}
+    .media-bg {
+        background-color: #041213; /* Slightly darker for better contrast with glows */
+    }
     
-    <style>
-        body { 
-            background-color: #041213; /* Slightly darker for better contrast with glows */
-            color: #c9d1d9; 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden;
-        }
-        
-        /* Premium Glassmorphism */
-        .glass-card {
-            background: rgba(13, 56, 60, 0.3);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(20, 184, 166, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .glass-card:hover {
-            background: rgba(13, 56, 60, 0.5);
-            border-color: rgba(20, 184, 166, 0.4);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(20, 184, 166, 0.1);
-            transform: translateY(-4px);
-        }
+    /* Premium Glassmorphism */
+    .glass-card {
+        background: rgba(13, 56, 60, 0.3);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(20, 184, 166, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        z-index: 10;
+    }
+    
+    .glass-card:hover {
+        background: rgba(13, 56, 60, 0.5);
+        border-color: rgba(20, 184, 166, 0.4);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(20, 184, 166, 0.1);
+        transform: translateY(-4px);
+    }
 
-        /* Ambient Background Glows */
-        .glow-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            z-index: 0;
-            opacity: 0.4;
-            pointer-events: none;
-        }
+    /* Ambient Background Glows */
+    .glow-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: 0;
+        opacity: 0.4;
+        pointer-events: none;
+    }
 
-        .glow-1 {
-            top: -10%; left: -10%;
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, transparent 70%);
-        }
+    .glow-1 {
+        top: -10%; left: -10%;
+        width: 500px; height: 500px;
+        background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, transparent 70%);
+    }
 
-        .glow-2 {
-            bottom: -20%; right: -10%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(14, 116, 144, 0.3) 0%, transparent 70%);
-        }
+    .glow-2 {
+        bottom: -20%; right: -10%;
+        width: 600px; height: 600px;
+        background: radial-gradient(circle, rgba(14, 116, 144, 0.3) 0%, transparent 70%);
+    }
 
-        /* Button Hover Effects */
-        .btn-gradient {
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(14, 116, 144, 0.2));
-            border: 1px solid rgba(20, 184, 166, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-gradient:hover {
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.8), rgba(14, 116, 144, 0.8));
-            color: white;
-            box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
-            border-color: transparent;
-        }
+    /* Button Hover Effects */
+    .btn-gradient {
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(14, 116, 144, 0.2));
+        border: 1px solid rgba(20, 184, 166, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .btn-gradient:hover {
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.8), rgba(14, 116, 144, 0.8));
+        color: white;
+        box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+        border-color: transparent;
+    }
 
-        .text-gradient {
-            background: linear-gradient(to right, #2dd4bf, #38bdf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
-</head>
-<body class="min-h-screen py-24 px-6 relative flex flex-col items-center">
+    .text-gradient {
+        background: linear-gradient(to right, #2dd4bf, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+{% endblock %}
 
+{% block content %}
+<section class="min-h-[85vh] py-24 px-6 relative flex flex-col items-center overflow-x-hidden media-bg">
     <!-- Background Decor -->
     <div class="glow-blob glow-1"></div>
     <div class="glow-blob glow-2"></div>
@@ -188,14 +180,13 @@
             </a>
 
         </div>
-
     </div>
 
+    <!-- Note: changed back route to 'index' as that's standard for Flask homepage, change back to 'home' if needed -->
     <div class="text-center mt-32 w-full z-10 relative">
-        <a href="{{ url_for('home') }}" class="inline-flex items-center justify-center gap-3 text-teal-500 hover:text-white transition-all font-bold uppercase tracking-[0.2em] text-sm group">
+        <a href="{{ url_for('index') }}" class="inline-flex items-center justify-center gap-3 text-teal-500 hover:text-white transition-all font-bold uppercase tracking-[0.2em] text-sm group">
             <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition-transform"></i> Back to Dashboard
         </a>
     </div>
-
-</body>
-</html>
+</section>
+{% endblock %}
