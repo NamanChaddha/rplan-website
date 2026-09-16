@@ -58,6 +58,11 @@
             background: linear-gradient(to right, transparent, #30363d, transparent);
         }
     </style>
+    <script>
+    function openPDF(pdfUrl) {
+        window.open(pdfUrl, '_blank');
+    }
+    </script>
 </head>
 <body class="bg-[#0d1117] text-gray-300">
 
@@ -145,7 +150,9 @@
                         <p class="text-sm text-teal-400 mt-1">Udemy</p>
                         <p class="text-gray-400 mt-3 text-sm">Issued: September 2026</p>
                     </div>
-                    <a href="javascript:void(0)" onclick="openPDF('{{ url_for('static', filename='power_bi_certificate.pdf') }}')" class="mt-auto inline-block text-center bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-teal-600/20 w-full mt-4">View Certificate</a>
+                    <a href="{{ url_for('static', filename='power_bi_certificate.pdf') }}" target="_blank" class="mt-auto inline-block text-center bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-teal-600/20 w-full mt-4">
+                        View Certificate
+                    </a>                
                 </div>
                 <!-- Talking to AI -->
                 <div class="certificate-card bg-gray-800/50 rounded-lg shadow-lg p-6" style="animation-delay: 0.6s;">
@@ -176,7 +183,7 @@
                     </div>
                     <a href="static/250804-PMI Citizen Developer™ Practitioner Skills.pdf" target="_blank" class="mt-auto inline-block text-center bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-teal-600/20 w-full mt-4">View Certificate</a>
                 </div>
-
+                
                  <!-- Roser Systems -->
                 <div class="certificate-card bg-gray-800/50 rounded-lg shadow-lg p-6" style="animation-delay: 0.9s;">
                     <div class="card-content">
