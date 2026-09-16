@@ -1,134 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Mission</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+{% extends "base.html" %}
 
-        body {
-            margin: 0;
-            padding: 20px;
-            background-color: #0f172a; /* Deep modern dark blue */
-            background-image: 
-                radial-gradient(at 0% 0%, hsla(167, 83%, 25%, 0.671) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(152, 91%, 35%, 0.15) 0px, transparent 50%);
-            font-family: 'Montserrat', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            color: #f8fafc;
-        }
+{% block title %}Our Mission | rPlan{% endblock %}
 
-        .mission-container {
-            position: relative;
-            max-width: 900px;
-            background: linear-gradient(145deg, #04564b, #243969);
-            border-radius: 24px;
-            padding: 80px 60px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(4, 102, 79, 0.05);
-            overflow: hidden;
-            z-index: 1;
-        }
+{% block content %}
+<!-- Wrapper section with your custom ambient background gradients -->
+<section class="relative min-h-[85vh] flex items-center justify-center py-20 px-4"
+         style="background-image: radial-gradient(at 0% 0%, hsla(167, 83%, 25%, 0.671) 0px, transparent 50%), radial-gradient(at 100% 100%, hsla(152, 91%, 35%, 0.15) 0px, transparent 50%);">
+    
+    <!-- Mission Container -->
+    <div class="relative max-w-4xl w-full bg-gradient-to-br from-[#04564b] to-[#243969] rounded-3xl p-10 md:p-16 shadow-2xl border border-[#04664f]/30 overflow-hidden z-10 transition-transform duration-500 hover:-translate-y-1">
+        
+        <!-- Decorative Background Quote Icon -->
+        <div class="absolute -top-10 left-5 text-[200px] md:text-[300px] font-serif text-sky-400/5 font-black leading-none select-none pointer-events-none -z-10">"</div>
+        
+        <!-- Glowing Accent Line on the Left -->
+        <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-sky-400 to-blue-500"></div>
 
-        /* Decorative Quote Icon in background */
-        .mission-container::before {
-            content: '"';
-            position: absolute;
-            top: -40px;
-            left: 20px;
-            font-size: 300px;
-            font-family: serif;
-            color: rgba(56, 189, 248, 0.05); /* Very faint neon blue */
-            font-weight: 900;
-            line-height: 1;
-            z-index: -1;
-        }
-
-        .accent-line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            background: linear-gradient(to bottom, #38bdf8, #3b82f6);
-        }
-
-        .subtitle {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #38bdf8;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin: 0 0 30px 0;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: #ffffff;
-        }
-
-        .divider {
-            height: 4px;
-            width: 80px;
-            background: #38bdf8;
-            margin-bottom: 40px;
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-        }
-
-        p {
-            font-size: 1.5rem;
-            line-height: 1.8;
-            color: #cbd5e1;
-            font-weight: 300;
-            margin: 0;
-        }
-
-        /* Highlight specific keywords */
-        .highlight {
-            color: #ffffff;
-            font-weight: 400;
-            background: linear-gradient(120deg, rgba(56,189,248,0.2) 0%, rgba(56,189,248,0) 100%);
-            padding: 0 5px;
-            border-bottom: 1px solid #38bdf8;
-        }
-
-        @media (max-width: 768px) {
-            .mission-container {
-                padding: 50px 30px;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
-            p {
-                font-size: 1.2rem;
-            }
-            .mission-container::before {
-                font-size: 200px;
-                top: -20px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="mission-container">
-        <div class="accent-line"></div>
-        <span class="subtitle">Our Purpose</span>
-        <h1>Mission</h1>
-        <div class="divider"></div>
-        <p>
-            To engage with the best <span class="highlight">Project Controls and Project Planning teams</span> around the Globe and support them with building experienced Planning & Reporting teams such as to run the EPCM category of projects most efficiently in conformance to <span class="highlight">World Class Best Practices!</span>
+        <!-- Content -->
+        <span class="text-sm uppercase tracking-[4px] text-sky-400 font-bold mb-3 block">Our Purpose</span>
+        
+        <h1 class="text-5xl md:text-6xl font-black tracking-tight text-white mb-8">Mission</h1>
+        
+        <!-- Glowing Divider -->
+        <div class="h-1 w-20 bg-sky-400 mb-10 rounded-sm shadow-[0_0_10px_rgba(56,189,248,0.5)]"></div>
+        
+        <p class="text-xl md:text-2xl leading-relaxed text-slate-300 font-light m-0">
+            To engage with the best 
+            <span class="text-white font-normal bg-gradient-to-r from-sky-400/20 to-transparent px-1 border-b border-sky-400">Project Controls and Project Planning teams</span> 
+            around the Globe and support them with building experienced Planning & Reporting teams such as to run the EPCM category of projects most efficiently in conformance to 
+            <span class="text-white font-normal bg-gradient-to-r from-sky-400/20 to-transparent px-1 border-b border-sky-400">World Class Best Practices!</span>
         </p>
     </div>
-
-</body>
-</html>
+</section>
+{% endblock %}
