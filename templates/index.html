@@ -125,10 +125,13 @@
         }
 
         /* --- New Educational Balloon Animations & Shape --- */
-        #actual-balloon {
-            /* Creates a realistic balloon shape */
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2), 0 15px 25px rgba(0,0,0,0.3);
+       #actual-balloon {
+            /* Creates a perfect spherical shape */
+            border-radius: 50%;
+            aspect-ratio: 1; /* Forces a perfect circle */
+            
+            /* Enhanced 3D shadow for a sphere */
+            box-shadow: inset -15px -15px 25px rgba(0,0,0,0.3), inset 10px 10px 20px rgba(255,255,255,0.2), 0 15px 25px rgba(0,0,0,0.4);
         }
 
         @keyframes floatUpCenter {
