@@ -1161,8 +1161,8 @@ document.addEventListener("keydown", function (e) {
     </div>
 </div>
 
-<!-- Central Floating Educational Balloon -->
-<div id="balloon-container" class="fixed inset-0 z-[9999] pointer-events-none hidden flex items-center justify-center">
+<!-- Central Floating Educational Balloon with Black Overlay -->
+<div id="balloon-container" class="fixed inset-0 z-[9999] pointer-events-auto hidden flex items-center justify-center bg-black transition-opacity duration-500 opacity-0">
     <!-- Wrapper handles the float up -->
     <div id="balloon-wrapper" class="relative flex items-center justify-center">
         <!-- Actual balloon handles the wobble and pop -->
@@ -1192,8 +1192,12 @@ document.addEventListener("keydown", function (e) {
                 const balloon = document.getElementById("actual-balloon");
                 
                 if (container && wrapper && balloon) {
-                    // Make container visible
+                    // Make container visible and fade in the black screen
                     container.classList.remove("hidden");
+                    setTimeout(() => {
+                        container.classList.remove("opacity-0");
+                        container.classList.add("opacity-100");
+                    }, 10);
                     
                     // 1. Trigger float up animation
                     wrapper.classList.add("animate-float-up");
@@ -1209,11 +1213,15 @@ document.addEventListener("keydown", function (e) {
                         balloon.classList.remove("animate-wobble-infinite");
                         balloon.classList.add("animate-balloon-explode");
                         
-                        // Fully hide the container after the pop animation completes
+                        // Fade out the black screen
+                        container.classList.remove("opacity-100");
+                        container.classList.add("opacity-0");
+                        
+                        // Fully hide the container after the pop & fade animation completes
                         setTimeout(() => {
                             container.classList.add("hidden");
                             container.remove(); // Remove from DOM completely
-                        }, 400); 
+                        }, 500); 
                     }, 8500); 
                 }
             }, 1000); 
