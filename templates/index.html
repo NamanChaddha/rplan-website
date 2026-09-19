@@ -1165,9 +1165,10 @@ document.addEventListener("keydown", function (e) {
 </div>
 
 <!-- Central Floating Educational Balloon with Black Overlay -->
-<div id="balloon-container" class="fixed inset-0 z-[9999] pointer-events-auto hidden flex items-center justify-center bg-black transition-opacity duration-500 opacity-0">
-    <!-- Wrapper handles the float up -->
-    <div id="balloon-wrapper" class="relative flex items-center justify-center">
+<!-- Notice: 'hidden' is removed so it covers the screen instantly on load -->
+<div id="balloon-container" class="fixed inset-0 z-[9999] pointer-events-auto flex items-center justify-center bg-black transition-opacity duration-500 opacity-100">
+    <!-- Wrapper starts with opacity-0 so the balloon is invisible until the animation starts -->
+    <div id="balloon-wrapper" class="relative flex items-center justify-center opacity-0">
         <!-- Actual balloon handles the wobble and pop -->
         <div id="actual-balloon" class="bg-teal-500 text-white font-bold p-8 max-w-sm text-center flex flex-col items-center justify-center relative">
             <i class="fas fa-lightbulb text-4xl mb-3 text-teal-100"></i>
@@ -1184,39 +1185,37 @@ document.addEventListener("keydown", function (e) {
 
 <!-- Educational Balloon Logic -->
 <script>
+    // 1. Synchronous check: If they already saw it, instantly hide the black screen 
+    // BEFORE the rest of the page even loads. Prevents black flash on reload.
+    if (sessionStorage.getItem("hasSeenEduBalloon")) {
+        document.getElementById("balloon-container").style.display = 'none';
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
-        // Check sessionStorage so it only shows ONCE per session
         if (!sessionStorage.getItem("hasSeenEduBalloon")) {
+            const container = document.getElementById("balloon-container");
+            const wrapper = document.getElementById("balloon-wrapper");
+            const balloon = document.getElementById("actual-balloon");
             
-            // Wait 1 second after page load before starting the animation
-            setTimeout(() => {
-                const container = document.getElementById("balloon-container");
-                const wrapper = document.getElementById("balloon-wrapper");
-                const balloon = document.getElementById("actual-balloon");
+            if (container && wrapper && balloon) {
                 
-                if (container && wrapper && balloon) {
-                    // Make container visible and fade in the black screen
-                    container.classList.remove("hidden");
-                    setTimeout(() => {
-                        container.classList.remove("opacity-0");
-                        container.classList.add("opacity-100");
-                    }, 10);
-                    
-                    // 1. Trigger float up animation
+                // Screen is already black. Wait 500ms, then launch the balloon.
+                setTimeout(() => {
+                    wrapper.classList.remove("opacity-0");
                     wrapper.classList.add("animate-float-up");
                     
-                    // 2. Start continuous wobbling once it arrives at the center
+                    // Start continuous wobbling once it arrives at the center
                     setTimeout(() => {
                         balloon.classList.add("animate-wobble-infinite");
                     }, 1500);
 
-                    // 3. Wait 7 seconds for the user to read, then POP
+                    // Wait 7 seconds for the user to read, then POP
                     setTimeout(() => {
                         // Swap wobble for the pop animation
                         balloon.classList.remove("animate-wobble-infinite");
                         balloon.classList.add("animate-balloon-explode");
                         
-                        // Fade out the black screen
+                        // Fade out the black screen overlay to reveal the website
                         container.classList.remove("opacity-100");
                         container.classList.add("opacity-0");
                         
@@ -1226,8 +1225,8 @@ document.addEventListener("keydown", function (e) {
                             container.remove(); // Remove from DOM completely
                         }, 500); 
                     }, 8500); 
-                }
-            }, 1000); 
+                }, 500); 
+            }
 
             // Mark as seen for this browser session
             sessionStorage.setItem("hasSeenEduBalloon", "true");
