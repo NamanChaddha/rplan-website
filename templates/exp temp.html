@@ -64,19 +64,19 @@
         }
 
         .slide {
-            position: absolute;
-            width: 550px;
-            height: 350px;
-            border-radius: 24px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: #111827; /* Fallback while loading */
-        }
+    position: absolute;
+    width: 550px;
+    height: 350px;
+    border-radius: 24px;
+    background-size: contain;         /* Changed from cover to contain */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(17, 24, 39, 0.6); /* Fills letterbox space with a dark tone */
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
         @media (max-width: 768px) {
             .slide {
