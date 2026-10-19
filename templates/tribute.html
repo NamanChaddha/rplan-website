@@ -8,16 +8,6 @@
 
     <!-- Hero Section -->
     <header class="bg-[#126160] text-[#f4f4f4] text-center py-16 px-6 border-b-[5px] border-[#d1b075]">
-        
-        <!-- Added Portrait Image -->
-        <div class="flex justify-center mb-6">
-            <img 
-                src="static/dadaji.jpeg" 
-                alt="Late Shri Sitaram Chaddha" 
-                class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-[#d1b075] shadow-xl"
-            >
-        </div>
-
         <h1 class="text-4xl md:text-5xl mb-2 font-normal tracking-wide">Late Shri Sitaram Chaddha</h1>
         <h2 class="text-[#d1b075] text-xl md:text-2xl font-light italic mt-2">A Legacy of Pragmatic Genius & Entrepreneurial Pursuit</h2>
         <p class="max-w-4xl mx-auto mt-6 text-[1.1rem] text-gray-200 leading-relaxed">
@@ -25,43 +15,57 @@
         </p>
     </header>
 
-    <!-- The Journey Section -->
-    <section class="max-w-5xl mx-auto my-16 px-6">
+    <!-- The Journey Section (Now with Image on Left) -->
+    <section class="max-w-7xl mx-auto my-16 px-6">
         
         <!-- Section Title with Gold Underline -->
         <h3 class="text-center text-3xl text-[#126160] mb-12 relative after:content-[''] after:block after:w-16 after:h-[3px] after:bg-[#d1b075] after:mx-auto after:mt-3">
             The Foundation Stones
         </h3>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Side-by-Side Container -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-10 mb-16">
             
-            <!-- Company 1 -->
-            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-[#d1b075] transition-transform duration-300 hover:-translate-y-1.5">
-                <div class="text-2xl font-bold text-[#126160] mb-2">1990</div>
-                <div class="text-xl text-[#d1b075] font-semibold mb-4">M/S Immaculate Enterprises</div>
-                <p class="text-gray-700 leading-relaxed">
-                    The inaugural venture that sparked a decades-long entrepreneurial journey, establishing a benchmark for operational excellence and visionary leadership.
-                </p>
+            <!-- Left Side: Portrait Image -->
+            <div class="w-full lg:w-1/3 flex justify-center lg:justify-end flex-shrink-0 lg:sticky lg:top-8">
+                <img 
+                    src="static/dadaji.jpeg" 
+                    alt="Late Shri Sitaram Chaddha" 
+                    class="w-64 md:w-80 h-auto rounded-xl object-cover border-[5px] border-[#d1b075] shadow-lg"
+                >
             </div>
 
-            <!-- Company 2 -->
-            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-[#d1b075] transition-transform duration-300 hover:-translate-y-1.5">
-                <div class="text-2xl font-bold text-[#126160] mb-2">2004</div>
-                <div class="text-xl text-[#d1b075] font-semibold mb-4">M/S Tushar Trading Company</div>
-                <p class="text-gray-700 leading-relaxed">
-                    A flourishing enterprise that further cemented his reputation in the trading sector. This chapter was respectfully wound up following his passing, preserving its memory and integrity.
-                </p>
-            </div>
+            <!-- Right Side: The Cards Grid -->
+            <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                
+                <!-- Company 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d1b075] transition-transform duration-300 hover:-translate-y-1.5 flex flex-col">
+                    <div class="text-xl font-bold text-[#126160] mb-1">1990</div>
+                    <div class="text-lg text-[#d1b075] font-semibold mb-3">M/S Immaculate Enterprises</div>
+                    <p class="text-gray-700 leading-relaxed text-sm flex-grow">
+                        The inaugural venture that sparked a decades-long entrepreneurial journey, establishing a benchmark for operational excellence and visionary leadership.
+                    </p>
+                </div>
 
-            <!-- Company 3 -->
-            <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-[#d1b075] transition-transform duration-300 hover:-translate-y-1.5">
-                <div class="text-2xl font-bold text-[#126160] mb-2">2011</div>
-                <div class="text-xl text-[#d1b075] font-semibold mb-4">M/s BREdutech</div>
-                <p class="text-gray-700 leading-relaxed">
-                    A testament to his forward-thinking mindset, expanding the group's horizons into the education sector. This venture embodies his commitment to the future by providing personalized education to empower students with the wings of education.
-                </p>
+                <!-- Company 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d1b075] transition-transform duration-300 hover:-translate-y-1.5 flex flex-col">
+                    <div class="text-xl font-bold text-[#126160] mb-1">2004</div>
+                    <div class="text-lg text-[#d1b075] font-semibold mb-3">M/S Tushar Trading Company</div>
+                    <p class="text-gray-700 leading-relaxed text-sm flex-grow">
+                        A flourishing enterprise that further cemented his reputation in the trading sector. This chapter was respectfully wound up following his passing, preserving its memory and integrity.
+                    </p>
+                </div>
+
+                <!-- Company 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d1b075] transition-transform duration-300 hover:-translate-y-1.5 flex flex-col">
+                    <div class="text-xl font-bold text-[#126160] mb-1">2011</div>
+                    <div class="text-lg text-[#d1b075] font-semibold mb-3">M/s BREdutech</div>
+                    <p class="text-gray-700 leading-relaxed text-sm flex-grow">
+                        A testament to his forward-thinking mindset, expanding the group's horizons into the education sector. This venture embodies his commitment to the future by providing personalized education to empower students with the wings of education.
+                    </p>
+                </div>
+                
             </div>
-            
         </div>
     </section>
 
