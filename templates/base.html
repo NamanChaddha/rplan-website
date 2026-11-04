@@ -607,6 +607,7 @@
     </main>
 
     <!-- GLOBAL SCRIPTS -->
+    <!-- GLOBAL SCRIPTS -->
     <script>
         // Spotlight Effect
         const spotlight = document.getElementById('spotlight');
@@ -653,17 +654,20 @@
             }
         });
 
-        // Project Modal Logic
+        // Modal Logic
         const modal = document.getElementById('projectModal');
         const closeModal = document.getElementById('closeModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
-
-        function openProjectModal() {
-            if(modal) modal.classList.remove('hidden');
-        }
+        const modalContainer = modal ? modal.querySelector('.bg-gray-800') : null;
+        const modalContent = document.getElementById('modalContent');
+        const detailsLink = document.querySelector('.pt-3.border-t');
 
         function closeProjectModal() {
-            if(modal) modal.classList.add('hidden');
+            if(modal) {
+                modal.classList.add('hidden');
+                // Clear out the iframe so audio/PDF stops processing in background
+                if(modalContent) modalContent.innerHTML = '';
+            }
         }
 
         if(closeModal) closeModal.addEventListener('click', closeProjectModal);
@@ -676,12 +680,27 @@
             }
         });
 
-        // Basic openPDF fallback for non-index pages (opens in new tab)
-        // Note: If you want the full custom PDF modal logic on every page, copy the entire pdfjsLib logic from index.html into here.
-        if (typeof window.openPDF === "undefined") {
-            window.openPDF = function(url) {
-                window.open(url, '_blank');
+        // Corrected openPDF function to use the Modal
+        window.openPDF = function(url) {
+            if (!modal || !modalContent) {
+                window.open(url, '_blank'); // Fallback if modal doesn't exist
+                return;
             }
+
+            // Adjust modal width and height to be larger for PDF viewing
+            modalContainer.classList.remove('max-w-lg');
+            modalContainer.classList.add('max-w-5xl', 'h-[85vh]');
+            
+            // Hide the extra decorative links inside the modal for PDF view
+            if (detailsLink) detailsLink.style.display = 'none';
+            const subContent = document.getElementById('modalSubContent');
+            if (subContent) subContent.style.display = 'none';
+
+            // Inject the iframe containing the PDF
+            modalContent.innerHTML = `<iframe src="${url}" class="w-full h-[65vh] rounded-lg border border-gray-700 bg-white"></iframe>`;
+            
+            // Show the modal
+            modal.classList.remove('hidden');
         }
     </script>
     
